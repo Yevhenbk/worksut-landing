@@ -1,11 +1,13 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
-import App from "./views/app/app.main";
+import SampleView from "./sample/SampleView";
+import { FontStyle } from "./static/fonts/fonts";
+// import App from "./views/app/app.main";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <SampleView />
   </React.StrictMode>,
   document.getElementById("root")
 );

@@ -1,4 +1,4 @@
-import * as react from "react";
+import "./app.main.scss";
 
 /**
  * ! Main Instance of the application
