@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Input from "../components/Input/Input";
+import ProgressBar from "../components/ProgressBar/ProgressBar";
 import Scrollable from "../components/Scrollable/Scrollable";
 import "./SampleView.scss";
 
@@ -31,6 +32,9 @@ const SampleView = () => {
             },
           }}
         />
+      </div>
+      <div className="mt-3">
+        <ProgressBar progress={50}></ProgressBar>
       </div>
       <div className="mt-3">
         <Scrollable></Scrollable>
