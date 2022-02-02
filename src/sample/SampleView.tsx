@@ -7,7 +7,7 @@ import Scrollable from "../components/Scrollable/Scrollable";
 import "./SampleView.scss";
 import { Next, Back } from "../functions/functions.slider";
 import { useAppDispatch, useAppSelector } from "../core/core.app.hooks";
-
+import LogoTitle from "../components/LogoTitle/LogoTitle";
 /**
  * ! Main Instance of the application
  * * whitehatdevv - 2022/01/21
@@ -22,6 +22,9 @@ const SampleView = () => {
   return (
     <>
       <div>
+        <div>
+          <LogoTitle text= "worksut"/>
+        </div>
         <div>
           <h1 className="positionTitle">Position {position}</h1>
           <button className="positionButton" onClick={() => dispatch(Next())}>
