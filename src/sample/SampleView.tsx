@@ -14,6 +14,7 @@ import Text from '../components/Text/Text'
  * ! Main Instance of the application
  * * whitehatdevv - 2022/01/21
  */
+
 const SampleView = () => {
 	const position = useAppSelector((state) => state.slider.position)
 	const dispatch = useAppDispatch()
@@ -133,5 +134,3 @@ const SampleView = () => {
 
 // * Export the application
 export default SampleView
-
-//	fontSize={Tokens.Typography.Sizes.Website.xxxxxLarge}

@@ -9,10 +9,10 @@ import { Provider } from "react-redux";
 // import App from "./views/app/app.main";
 
 ReactDOM.render(
-  <Provider store={Store}>
-    <React.StrictMode>
-      <SampleView />
-    </React.StrictMode>
-  </Provider>,
-  document.getElementById("root")
-);
+	<Provider store={Store}>
+		<React.StrictMode>
+			<SampleView />
+		</React.StrictMode>
+	</Provider>,
+	document.getElementById('root')
+)

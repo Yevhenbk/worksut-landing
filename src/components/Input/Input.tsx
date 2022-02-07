@@ -48,7 +48,6 @@ const Input: React.FC<InputProps> = (props: any) => {
 	return (
 		<DivStyled>
 			<InputStyled
-				color={props.color}
 				type={props.type}
 				required={props.required || false}
 				value={value}
@@ -61,8 +60,8 @@ const Input: React.FC<InputProps> = (props: any) => {
 					}
 				}}
 				placeholder={props.placeholder}
-				autoCapitalize={props.capitalize || 'false'}></InputStyled>
-
+				autoCapitalize={props.capitalize || 'false'}
+			/>
 			{props.wrapper ? (
 				<Wrapper
 					disabled={props.validator ? isValid : true}

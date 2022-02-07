@@ -59,7 +59,7 @@ export const Tokens = {
 	Typography: {
 		Sizes: {
 			Website: {
-				xxSmall: '14',
+				xxSmall: '14px',
 				xSmall: '16px',
 				Small: '18px',
 				Medium: '24px',

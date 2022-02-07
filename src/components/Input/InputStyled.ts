@@ -5,17 +5,17 @@ import { Tokens } from '../../static/Colors'
 export const InputStyled = styled.input`
 	border: none;
 	background-color: transparent;
-	color: ${Tokens.Colors.DarkMode.General.Primary};
+	color: ${Tokens.Colors.DarkMode.Text.Primary};
 	padding: 1%;
 	width: 100%;
 	::placeholder {
-		color: ${(props) => props.color};
-		font-family: 'Gilroy';
+		color: ${Tokens.Colors.DarkMode.Text.Secondary};
+		font-family: ${Tokens.Typography.FontFamily.Primary};
 	}
-	font-weight: normal;
-	font-size: 32px;
-	line-height: 49px;
-	font-family: 'Gilroy';
+	font-weight: ${Tokens.Typography.Weights.Regular};
+	font-size: ${Tokens.Typography.Sizes.Website.xLarge};
+	line-height: ${Tokens.Typography.LineHeight.Large};
+	font-family: ${Tokens.Typography.FontFamily.Primary};
 `
 
 // * Styled div
