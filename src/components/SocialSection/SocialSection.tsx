@@ -29,8 +29,8 @@ const SocialSection: React.FC<SocialSectionPropDefinition> = (props: any) => {
   return (
     <>
       <DivStyleSocialSection>
-        {props.networks.map((item: any) => (
-          <SocialIcon icon={item.icon} url={item.url} />
+        {props.networks.map((item: any, i: number) => (
+          <SocialIcon key={i} icon={item.icon} url={item.url} />
         ))}
       </DivStyleSocialSection>
     </>
