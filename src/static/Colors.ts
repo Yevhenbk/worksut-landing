@@ -15,7 +15,7 @@ export const Tokens = {
 				Secondary: '#DF473F',
 			},
 			Text: {
-				Primary: '#fff',
+				Primary: '#FFFFFF',
 				Secondary: '#D1D1D1',
 				Tertiary: '#A3A3A3',
 				Quartiary: '#454545',

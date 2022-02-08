@@ -1,18 +1,19 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 // * Interface definition for props configuration
 interface TextStyledProps {
-  color: string;
-  fontWeight: number;
-  fontSize: string;
+	color: string
+	fontFamily: string
+	fontSize: string
+	fontWeight: number
+	width: number
 }
 
 // * Styled landing title
 export const TextStyled = styled.div<TextStyledProps>`
-  background-color: #313131;
-  color: ${(props) => props.color};
-  font-weight: ${(props) => props.fontWeight};
-  font-size: ${(props) => props.fontSize};
-  max-width: 25ch;
-  font-family: "Gilroy";
-`;
+	max-width: ${(props) => props.width}ch;
+	color: ${(props) => props.color};
+	font-family: ${(props) => props.fontFamily};
+	font-size: ${(props) => props.fontSize};
+	font-weight: ${(props) => props.fontWeight};
+`

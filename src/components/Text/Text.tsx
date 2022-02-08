@@ -6,8 +6,10 @@ import { TextStyled } from './TextStyled'
 const TextProptypes = {
 	text: PropTypes.string.isRequired,
 	color: PropTypes.string,
-	fontWeight: PropTypes.string,
+	fontFamily: PropTypes.string,
 	fontSize: PropTypes.string,
+	fontWeight: PropTypes.string,
+	width: PropTypes.number,
 	styler: PropTypes.func,
 }
 
@@ -26,8 +28,10 @@ const Text: React.FC<TextPropsTyped> = (props: any) => {
 		<>
 			<TextStyled
 				color={props.color}
+				fontFamily={props.fontFamily}
+				fontSize={props.fontSize}
 				fontWeight={props.fontWeight}
-				fontSize={props.fontSize}>
+				width={props.width}>
 				{props.styler ? props.styler(props.text) : props.text}
 			</TextStyled>
 		</>
