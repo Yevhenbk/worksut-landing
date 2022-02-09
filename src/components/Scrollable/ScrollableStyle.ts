@@ -1,9 +1,9 @@
 import styled, { keyframes } from 'styled-components'
-import { Tokens } from '../../static/Colors'
+import { Tokens } from '../../static/Tokens'
 
 // * Style for container indicator
 export const ScrollableContainer = styled.div`
-	border: 2pt solid ${Tokens.Colors.DarkMode.General.Primary};
+	border: 2pt solid ${Tokens.Colors.Backgrounds.Primary};
 	width: 25pt;
 	height: 45pt;
 	border-radius: 2em;
@@ -27,6 +27,6 @@ export const ScrollableBubble = styled.div`
 	padding: 6%;
 	margin: 40%;
 	border-radius: 3em;
-	background-color: ${Tokens.Colors.DarkMode.General.Primary};
+	background-color: ${Tokens.Colors.Backgrounds.Primary};
 	animation: ${BubbleAnimation} 1.75s infinite;
 `

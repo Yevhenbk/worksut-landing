@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Slide2Styled } from './SlideStyled-2'
 import Text from '../../../components/Text/Text'
-import { Tokens } from '../../../static/Colors'
+import { Tokens } from '../../../static/Tokens'
 
 // * Define proptypes object
 const Slide2Proptypes = {
@@ -29,10 +29,10 @@ const Slide2: React.FC<Slide2PropsTyped> = (props: any) => {
 				width={props.width}
 				height={props.height}>
 				<Text
-					color={Tokens.Colors.LightMode.Text.Primary}
+					color={Tokens.Colors.Text.Primary}
 					fontFamily={Tokens.Typography.FontFamily.Secondary}
 					fontWeight={Tokens.Typography.Weights.Black}
-					fontSize={Tokens.Typography.Sizes.Website.xxxxLarge}
+					fontSize={Tokens.Typography.Sizes.Website.Large}
 					text='worksut'
 				/>
 			</Slide2Styled>

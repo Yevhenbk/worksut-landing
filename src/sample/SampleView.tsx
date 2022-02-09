@@ -1,6 +1,6 @@
 import { Next, Back } from '../functions/functions.slider'
 import { Styler } from '../services/Settings/Settings.Styler'
-import { Tokens } from '../static/Colors'
+import { Tokens } from '../static/Tokens'
 import { useEffect, useState } from 'react'
 import { useAppDispatch, useAppSelector } from '../core/core.app.hooks'
 import './SampleView.scss'
@@ -41,7 +41,7 @@ const SampleView = () => {
 					</button>
 				</div>
 				<Input
-					color={Tokens.Colors.DarkMode.Text.Primary}
+					color={Tokens.Colors.Text.Primary}
 					type='email'
 					placeholder='Enter your email'
 					handleChange={setEmail}
@@ -60,7 +60,7 @@ const SampleView = () => {
 			</div>
 			<div>
 				<Input
-					color={Tokens.Colors.DarkMode.General.Primary}
+					color={Tokens.Colors.Text.Primary}
 					type='email'
 					placeholder='Introduce tu correo electronico'
 					handleChange={setEmail}
@@ -84,42 +84,45 @@ const SampleView = () => {
 					networks={[
 						{
 							icon: Tokens.Icons.Social.Instagram,
-							url: Tokens.URL.Social.Instagram,
+							url: Tokens.Icons.URL.Social.Instagram,
 						},
 						{
 							icon: Tokens.Icons.Social.Twitter,
-							url: Tokens.URL.Social.Twitter,
+							url: Tokens.Icons.URL.Social.Twitter,
 						},
 						{
 							icon: Tokens.Icons.Social.Linkedin,
-							url: Tokens.URL.Social.Linkedin,
+							url: Tokens.Icons.URL.Social.Linkedin,
 						},
 					]}
 				/>
 			</div>
 			<div className='mt-3'>
 				<Text
-					color={Tokens.Colors.DarkMode.General.Primary}
-					fontWeight={Tokens.Typography.Weights.Bolder}
-					fontSize={Tokens.Typography.Sizes.Website.xxxxLarge}
+					color={Tokens.Colors.Text.Secondary}
+					fontWeight={Tokens.Typography.Weights.Bold}
+					fontFamily={Tokens.Typography.FontFamily.Secondary}
+					fontSize={Tokens.Typography.Sizes.Website.Small}
 					text='bienvenido a la nueva forma de encontrar trabajo y contratar personas.'
+					styler={(text) => Styler.UpperCasing(text)}
 					width={20}
 				/>
 			</div>
 			<div className='mt-3'>
 				<Text
-					color={Tokens.Colors.DarkMode.Text.Tertiary}
-					fontWeight={Tokens.Typography.Weights.Regular}
-					fontSize={Tokens.Typography.Sizes.Website.xLarge}
+					color={Tokens.Colors.Text.Secondary}
+					fontWeight={Tokens.Typography.Weights.Bold}
+					fontFamily={Tokens.Typography.FontFamily.Secondary}
+					fontSize={Tokens.Typography.Sizes.Website.Small}
 					text='bienvenido al cambio.'
 					styler={(text) => Styler.UpperCasing(text)}
 				/>
 			</div>
 			<div className='mt-3'>
 				<Text
-					color={Tokens.Colors.DarkMode.Text.Primary}
+					color={Tokens.Colors.Text.Secondary}
 					fontWeight={Tokens.Typography.Weights.Black}
-					fontSize={Tokens.Typography.Sizes.Website.xxxxLarge}
+					fontSize={Tokens.Typography.Sizes.Website.xSmall}
 					text='text component'
 					styler={(text) => Styler.UpperCasing(text)}
 				/>
@@ -132,7 +135,7 @@ const SampleView = () => {
 			</div>
 			<div className='mt-3'>
 				<Slide2
-					bgColor={Tokens.Colors.DarkMode.Backgrounds.Secondary}
+					bgColor={Tokens.Colors.Backgrounds.Primary}
 					width={100}
 					height={100}
 				/>
