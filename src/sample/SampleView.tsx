@@ -11,6 +11,7 @@ import SocialSection from '../components/SocialSection/SocialSection'
 import Text from '../components/Text/Text'
 import Slide2 from '../views/app/Slide-2/Slide-2'
 import Slide6 from '../views/app/Slide-6/Slide-6'
+import Label from '../components/Label/Label'
 
 /**
  * ! Main Instance of the application
@@ -41,6 +42,15 @@ const SampleView = () => {
 						Next
 					</button>
 				</div>
+				<Label
+					color={Tokens.Colors.Text.Secondary}
+					fontWeight={Tokens.Typography.Weights.Bolder}
+					fontSize={Tokens.Typography.Sizes.Website.Regular}
+					fontFamily={Tokens.Typography.FontFamily.Primary}
+					text='Apúntate y consigue ventajas exclusivas antes que nadie'
+				>
+			</Label>
+
 				<Input
 					color={Tokens.Colors.Text.Primary}
 					type='email'
