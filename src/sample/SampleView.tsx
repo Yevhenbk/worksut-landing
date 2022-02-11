@@ -153,9 +153,9 @@ const SampleView = () => {
 			</div>
 			<div className=''>
 				<Slide6
-					// bgColor={Tokens.Colors.Backgrounds.Primary}
-					// width={100}
-					// height={100}
+					bgColor={Tokens.Colors.Backgrounds.Secondary}
+					width={100}
+					height={100}		// bgColor={Tokens.Colors.Backgrounds.Primary}
 				/>
 			</div>
 		</>
