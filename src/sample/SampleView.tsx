@@ -10,6 +10,7 @@ import Scrollable from '../components/Scrollable/Scrollable'
 import SocialSection from '../components/SocialSection/SocialSection'
 import Text from '../components/Text/Text'
 import Slide2 from '../views/app/Slide-2/Slide-2'
+import Slide6 from '../views/app/Slide-6/Slide-6'
 
 /**
  * ! Main Instance of the application
@@ -138,6 +139,13 @@ const SampleView = () => {
 					bgColor={Tokens.Colors.Backgrounds.Primary}
 					width={100}
 					height={100}
+				/>
+			</div>
+			<div className=''>
+				<Slide6
+					// bgColor={Tokens.Colors.Backgrounds.Primary}
+					// width={100}
+					// height={100}
 				/>
 			</div>
 		</>
