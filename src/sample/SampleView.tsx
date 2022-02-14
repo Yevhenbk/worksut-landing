@@ -12,6 +12,7 @@ import Text from '../components/Text/Text'
 import Slide2 from '../views/app/Slide-2/Slide-2'
 import Label from '../components/Label/Label'
 import Spinner from '../components/Spinner/Spinner'
+import Slide1 from '../views/app/Slide-1/Slide-1'
 
 /**
  * ! Main Instance of the application
@@ -146,6 +147,13 @@ const SampleView = () => {
         <Scrollable />
       </div>
       <div className="mt-3">
+        <div>
+          <Slide1
+            bgColor={Tokens.Colors.Backgrounds.Primary}
+            width={100}
+            height={100}
+          ></Slide1>
+        </div>
         <Slide2
           bgColor={Tokens.Colors.Backgrounds.Primary}
           width={100}
