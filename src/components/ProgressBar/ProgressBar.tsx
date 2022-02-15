@@ -5,6 +5,7 @@ import { ProgressBarContainer, ProgressStatus } from "./ProgressBarStyle";
 // * Define proptypes
 const ProgressBarProptypes = {
   progress: PropTypes.oneOf([...new Array(101)].map((_, i) => i)),
+  bgColor: PropTypes.string,
 };
 
 // * Define typealias
@@ -19,7 +20,10 @@ const ProgressBar: React.FC<ProgressBarTyped> = (props: any) => {
   return (
     <>
       <ProgressBarContainer>
-        <ProgressStatus progress={props.progress}></ProgressStatus>
+        <ProgressStatus
+          progress={props.progress}
+          bgColor={props.bgColor}
+        ></ProgressStatus>
       </ProgressBarContainer>
     </>
   );

@@ -11,6 +11,9 @@ import SocialSection from "../components/SocialSection/SocialSection";
 import Text from "../components/Text/Text";
 import Slide2 from "../views/app/Slide-2/Slide-2";
 import Label from "../components/Label/Label";
+import Spinner from "../components/Spinner/Spinner";
+import Slide1 from "../views/app/Slide-1/Slide-1";
+import LogoTitle from "../components/LogoTitle/LogoTitle";
 import Slide5 from "../views/app/Slide-5/Slide-5";
 
 /**
@@ -28,6 +31,12 @@ const SampleView = () => {
 
   return (
     <>
+      <LogoTitle
+        color={Tokens.Colors.Text.Secondary}
+        fontWeight={Tokens.Typography.Weights.Bolder}
+        fontFamily={Tokens.Typography.FontFamily.Primary}
+        text="worksut"
+      />
       <div>
         <div>
           <h1 className="positionTitle">Position {position}</h1>
@@ -38,13 +47,18 @@ const SampleView = () => {
             Next
           </button>
         </div>
+        <div>
+          <Spinner
+            color={Tokens.Colors.Text.Secondary}
+            colorOff={Tokens.Colors.Text.Primary}
+          />
+        </div>
         <Label
           color={Tokens.Colors.Text.Secondary}
           fontWeight={Tokens.Typography.Weights.Bolder}
-          fontSize={Tokens.Typography.Sizes.Website.Regular}
           fontFamily={Tokens.Typography.FontFamily.Primary}
           text="Apúntate y consigue ventajas exclusivas antes que nadie"
-        ></Label>
+        />
 
         <Input
           color={Tokens.Colors.Text.Primary}
@@ -83,30 +97,10 @@ const SampleView = () => {
           }}
         />
       </div>
-      <div className="titleSections">
-        <h1>Social Section</h1>
-        <br />
-        <SocialSection
-          networks={[
-            {
-              icon: Tokens.Icons.Social.Instagram,
-              url: Tokens.Icons.URL.Social.Instagram,
-            },
-            {
-              icon: Tokens.Icons.Social.Twitter,
-              url: Tokens.Icons.URL.Social.Twitter,
-            },
-            {
-              icon: Tokens.Icons.Social.Linkedin,
-              url: Tokens.Icons.URL.Social.Linkedin,
-            },
-          ]}
-        />
-      </div>
       <div className="mt-3">
         <Text
           color={Tokens.Colors.Text.Secondary}
-          fontWeight={Tokens.Typography.Weights.Bolder}
+          fontWeight={Tokens.Typography.Weights.Bold}
           fontFamily={Tokens.Typography.FontFamily.Secondary}
           fontSize={Tokens.Typography.Sizes.Website.Small}
           text="bienvenido a la nueva forma de encontrar trabajo y contratar personas."
@@ -134,10 +128,36 @@ const SampleView = () => {
         />
       </div>
       <div className="mt-3">
-        <ProgressBar progress={100}></ProgressBar>
+        <ProgressBar progress={80} bgColor={Tokens.Colors.Button.Default} />
       </div>
       <div className="mt-3">
         <Scrollable />
+      </div>
+      <div className="titleSections">
+        <br />
+        <SocialSection
+          networks={[
+            {
+              icon: Tokens.Icons.Social.Red.Instagram,
+              url: Tokens.Icons.URL.Social.Instagram,
+            },
+            {
+              icon: Tokens.Icons.Social.Red.Twitter,
+              url: Tokens.Icons.URL.Social.Twitter,
+            },
+            {
+              icon: Tokens.Icons.Social.Red.Linkedin,
+              url: Tokens.Icons.URL.Social.Linkedin,
+            },
+          ]}
+        />
+      </div>
+      <div>
+        <Slide1
+          bgColor={Tokens.Colors.Backgrounds.Primary}
+          width={100}
+          height={100}
+        />
       </div>
       <div className="mt-3">
         <Slide2

@@ -24,18 +24,18 @@ type LabelPropsTyped = PropTypes.InferProps<typeof LabelProptypes>
 
  const Label: React.FC<LabelPropsTyped> = (props: any) => {
 	return (
-		<>
-			<LabelStyled
-				color={props.color}
-				fontWeight={props.fontWeight}
-				fontSize={props.fontSize}
-				fontFamily={props.fontFamily}
-				backGround = {props.backGround}>
-				{props.styler ? props.styler(props.text) : props.text}
-
-			</LabelStyled>
-		</>
-	)
+    <>
+      <LabelStyled
+        color={props.color}
+        fontWeight={props.fontWeight}
+        fontSize={props.fontSize}
+        fontFamily={props.fontFamily}
+        backGround={props.backGround}
+      >
+        {props.styler ? props.styler(props.text) : props.text}
+      </LabelStyled>
+    </>
+  );
 }
 
 // * Proptypes
