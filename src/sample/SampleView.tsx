@@ -10,6 +10,7 @@ import Scrollable from "../components/Scrollable/Scrollable";
 import SocialSection from "../components/SocialSection/SocialSection";
 import Text from "../components/Text/Text";
 import Slide2 from "../views/app/Slide-2/Slide-2";
+import Slide6 from "../views/app/Slide-6/Slide-6";
 import Label from "../components/Label/Label";
 import Spinner from "../components/Spinner/Spinner";
 import Slide1 from "../views/app/Slide-1/Slide-1";
@@ -168,6 +169,13 @@ const SampleView = () => {
       </div>
       <div>
         <Slide5
+          bgColor={Tokens.Colors.Backgrounds.Secondary}
+          width={100}
+          height={100}
+        />
+      </div>
+      <div>
+        <Slide6
           bgColor={Tokens.Colors.Backgrounds.Secondary}
           width={100}
           height={100}
