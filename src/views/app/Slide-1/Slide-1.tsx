@@ -29,7 +29,7 @@ const Slide1: React.FC<Slide1PropTyped> = (props: any) => {
           <Spinner
             color={Tokens.Colors.Text.Primary}
             colorOff={Tokens.Colors.Text.Secondary}
-          ></Spinner>
+          />
         </SlideStyled1>
       </>
     );

@@ -6,11 +6,13 @@ interface SpinnerStyledProps {
   colorOff: string;
 }
 
-// * Style for container spinner
+// * Style for spinner container
 export const SpinnerContainer = styled.div`
   display: flex;
   justify-content: center;
-  margin: 0;
+  align-items: center;
+  position: relative;
+  margin: 0 auto;
 `;
 
 // * Define keyframes
@@ -19,13 +21,14 @@ const SpinAnimation = keyframes`
   100% {transform: rotate(360deg);}    
 `;
 
-// * Styled spinner
+// * Styled for the spinner
 export const SpinnerStyled = styled.div<SpinnerStyledProps>`
   border: 6px solid ${(props) => props.color};
   width: 100px;
   height: 100px;
   border-radius: 50%;
   padding: 1em;
+  position: relative;
   border-left-color: ${(props) => props.colorOff};
   animation: ${SpinAnimation} 1.75s linear infinite;
 

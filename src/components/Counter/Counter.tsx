@@ -1,6 +1,5 @@
 import * as PropTypes from "prop-types";
 import { useEffect, useState } from "react";
-import { Tokens } from "../../static/Tokens";
 import { CounterCointainerStyled, CounterStyled } from "./CounterStyled";
 
 // * Define proptypes
@@ -38,9 +37,7 @@ const Counter: React.FC<CounterPropsTyped> = (props: any) => {
   return (
     <>
       <CounterCointainerStyled>
-        <CounterStyled color={Tokens.Colors.Text.Primary}>
-          {count}%
-        </CounterStyled>
+        <CounterStyled color={props.color}>{count}%</CounterStyled>
       </CounterCointainerStyled>
     </>
   );

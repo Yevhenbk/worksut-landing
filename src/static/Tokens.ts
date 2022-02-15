@@ -9,6 +9,11 @@ export const Tokens = {
       Primary: "#313131",
       Secondary: "#FF524A",
     },
+    Button: {
+      Default: "#F64F48",
+      Press: "#DF473F",
+      Dissbled: "#EFAEAB",
+    },
   },
   Typography: {
     Sizes: {
@@ -50,17 +55,33 @@ export const Tokens = {
   },
   Icons: {
     Social: {
-      Twitter: {
-        src: "akar-icons_twitter-fill.png",
-        alt: "Twitter icon",
+      Red: {
+        Twitter: {
+          src: "akar-icons_twitter-fill.png",
+          alt: "Twitter icon",
+        },
+        Instagram: {
+          src: "akar-icons_instagram-fill.png",
+          alt: "Instagram icon",
+        },
+        Linkedin: {
+          src: "brandico_linkedin.png",
+          alt: "Linkedin icon",
+        },
       },
-      Instagram: {
-        src: "akar-icons_instagram-fill.png",
-        alt: "Instagram icon",
-      },
-      Linkedin: {
-        src: "brandico_linkedin.png",
-        alt: "Linkedin icon",
+      Black: {
+        Twitter: {
+          src: "twitter.png",
+          alt: "Twitter icon",
+        },
+        Instagram: {
+          src: "instagram.png",
+          alt: "Instagram icon",
+        },
+        Linkedin: {
+          src: "linkedin.png",
+          alt: "Linkedin icon",
+        },
       },
     },
     URL: {

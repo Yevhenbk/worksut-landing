@@ -14,6 +14,7 @@ import Slide6 from '../views/app/Slide-6/Slide-6'
 import Label from '../components/Label/Label'
 import Spinner from '../components/Spinner/Spinner'
 import Slide1 from '../views/app/Slide-1/Slide-1'
+import LogoTitle from "../components/LogoTitle/LogoTitle";
 
 /**
  * ! Main Instance of the application
@@ -30,6 +31,12 @@ const SampleView = () => {
 
   return (
     <>
+      <LogoTitle
+        color={Tokens.Colors.Text.Secondary}
+        fontWeight={Tokens.Typography.Weights.Bolder}
+        fontFamily={Tokens.Typography.FontFamily.Primary}
+        text="worksut"
+      />
       <div>
         <div>
           <h1 className="positionTitle">Position {position}</h1>
@@ -44,15 +51,14 @@ const SampleView = () => {
           <Spinner
             color={Tokens.Colors.Text.Secondary}
             colorOff={Tokens.Colors.Text.Primary}
-          ></Spinner>
+          />
         </div>
         <Label
           color={Tokens.Colors.Text.Secondary}
           fontWeight={Tokens.Typography.Weights.Bolder}
-          fontSize={Tokens.Typography.Sizes.Website.Regular}
           fontFamily={Tokens.Typography.FontFamily.Primary}
           text="Apúntate y consigue ventajas exclusivas antes que nadie"
-        ></Label>
+        />
 
         <Input
           color={Tokens.Colors.Text.Primary}
@@ -91,26 +97,6 @@ const SampleView = () => {
           }}
         />
       </div>
-      <div className="titleSections">
-        <h1>Social Section</h1>
-        <br />
-        <SocialSection
-          networks={[
-            {
-              icon: Tokens.Icons.Social.Instagram,
-              url: Tokens.Icons.URL.Social.Instagram,
-            },
-            {
-              icon: Tokens.Icons.Social.Twitter,
-              url: Tokens.Icons.URL.Social.Twitter,
-            },
-            {
-              icon: Tokens.Icons.Social.Linkedin,
-              url: Tokens.Icons.URL.Social.Linkedin,
-            },
-          ]}
-        />
-      </div>
       <div className="mt-3">
         <Text
           color={Tokens.Colors.Text.Secondary}
@@ -142,19 +128,38 @@ const SampleView = () => {
         />
       </div>
       <div className="mt-3">
-        <ProgressBar progress={100}></ProgressBar>
+        <ProgressBar progress={80} bgColor={Tokens.Colors.Button.Default} />
       </div>
       <div className="mt-3">
         <Scrollable />
       </div>
+      <div className="titleSections">
+        <br />
+        <SocialSection
+          networks={[
+            {
+              icon: Tokens.Icons.Social.Red.Instagram,
+              url: Tokens.Icons.URL.Social.Instagram,
+            },
+            {
+              icon: Tokens.Icons.Social.Red.Twitter,
+              url: Tokens.Icons.URL.Social.Twitter,
+            },
+            {
+              icon: Tokens.Icons.Social.Red.Linkedin,
+              url: Tokens.Icons.URL.Social.Linkedin,
+            },
+          ]}
+        />
+      </div>
+      <div>
+        <Slide1
+          bgColor={Tokens.Colors.Backgrounds.Primary}
+          width={100}
+          height={100}
+        />
+      </div>
       <div className="mt-3">
-        <div>
-          <Slide1
-            bgColor={Tokens.Colors.Backgrounds.Primary}
-            width={100}
-            height={100}
-          ></Slide1>
-        </div>
         <Slide2
           bgColor={Tokens.Colors.Backgrounds.Primary}
           width={100}

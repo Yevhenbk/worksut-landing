@@ -13,6 +13,4 @@ export const SlideStyled1 = styled.div<SlideStyled1Props>`
   width: ${(props) => props.width}%;
   height: ${(props) => props.height}vh;
   display: flex;
-  justify-content: center;
-  align-items: center;
 `;
