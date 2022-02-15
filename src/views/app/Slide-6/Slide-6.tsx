@@ -5,6 +5,9 @@ import { Tokens } from "../../../static/Tokens";
 import Label from "../../../components/Label/Label";
 import Text from "../../../components/Text/Text";
 import iconLike from "../../../static/img/iconLike.png";
+import SocialSection from "../../../components/SocialSection/SocialSection";
+import LogoTitle from "../../../components/LogoTitle/LogoTitle";
+
 // * Define proptypes object
 const Slide6Proptypes = {
   bgColor: PropTypes.string,
@@ -23,11 +26,18 @@ const Slide6: React.FC<Slide6PropsTyped> = (props: any) => {
 
   return (
     <>
+    
       <SlideStyled6
         bgColor={props.bgColor}
         width={props.width}
         height={props.height}
       >
+        <LogoTitle
+        color={Tokens.Colors.Text.Secondary}
+        fontWeight={Tokens.Typography.Weights.Bolder}
+        fontFamily={Tokens.Typography.FontFamily.Primary}
+        text="worksut"
+      />
         <Label
           color={Tokens.Colors.Text.Secondary}
           fontWeight={Tokens.Typography.Weights.Bolder}
@@ -46,6 +56,21 @@ const Slide6: React.FC<Slide6PropsTyped> = (props: any) => {
           ></Text>
         </TextIcon>
       </SlideStyled6>
+      <SocialSection
+          networks={[
+            {
+              icon: Tokens.Icons.Social.Red.Instagram,
+              url: Tokens.Icons.URL.Social.Instagram,
+            },
+            {
+              icon: Tokens.Icons.Social.Red.Twitter,
+              url: Tokens.Icons.URL.Social.Twitter,
+            },
+            {
+              icon: Tokens.Icons.Social.Red.Linkedin,
+              url: Tokens.Icons.URL.Social.Linkedin,
+            },
+          ]}></SocialSection>
     </>
   );
 };
