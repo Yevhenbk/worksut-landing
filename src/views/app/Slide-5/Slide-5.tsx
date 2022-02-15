@@ -5,6 +5,8 @@ import { Tokens } from "../../../static/Tokens";
 import Label from "../../../components/Label/Label";
 import Input from "../../../components/Input/Input";
 import { DivStyled5 } from "./SlideStyled-5";
+import SocialSection from "../../../components/SocialSection/SocialSection";
+import LogoTitle from "../../../components/LogoTitle/LogoTitle";
 
 // * Define proptypes object
 const Slide5Proptypes = {
@@ -36,11 +38,18 @@ const Slide5: React.FC<Slide5PropsTyped> = (props: any) => {
         width={props.width}
         height={props.height}
       >
+        <LogoTitle
+          color={Tokens.Colors.Text.Secondary}
+          fontWeight={Tokens.Typography.Weights.Bolder}
+          fontFamily={Tokens.Typography.FontFamily.Primary}
+          text="worksut"
+        />
+
         <DivStyled5>
           <Label
             color={Tokens.Colors.Text.Secondary}
             fontWeight={Tokens.Typography.Weights.Bolder}
-            fontSize={Tokens.Typography.Sizes.Website.Regular}
+            fontSize={Tokens.Typography.Sizes.Mobile.Medium}
             fontFamily={Tokens.Typography.FontFamily.Primary}
             text="Apúntate y consigue ventajas exclusivas antes que nadie"
           ></Label>
@@ -63,6 +72,22 @@ const Slide5: React.FC<Slide5PropsTyped> = (props: any) => {
           />
         </DivStyled5>
       </SlideStyled5>
+      <SocialSection
+        networks={[
+          {
+            icon: Tokens.Icons.Social.Red.Instagram,
+            url: Tokens.Icons.URL.Social.Instagram,
+          },
+          {
+            icon: Tokens.Icons.Social.Red.Twitter,
+            url: Tokens.Icons.URL.Social.Twitter,
+          },
+          {
+            icon: Tokens.Icons.Social.Red.Linkedin,
+            url: Tokens.Icons.URL.Social.Linkedin,
+          },
+        ]}
+      />
     </>
   );
 };

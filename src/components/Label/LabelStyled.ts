@@ -25,4 +25,8 @@ export const LabelStyled = styled.div<LabelStyledProps>`
   @media (min-width: 700px) {
     font-size: ${Tokens.Typography.Sizes.Website.Small};
   }
+
+  @media (min-width: 900px) {
+    font-size: ${Tokens.Typography.Sizes.Website.Regular};
+  }
 `;
