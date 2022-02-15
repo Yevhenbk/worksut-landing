@@ -1,6 +1,7 @@
 import { SpinnerContainer, SpinnerStyled } from "./SpinnerStyled";
 import * as PropTypes from "prop-types";
 import Counter from "../Counter/Counter";
+import { Tokens } from "../../static/Tokens";
 
 // * Define proptypes
 const SpinnerPropstypes = {
@@ -20,11 +21,8 @@ const Spinner: React.FC<SpinnerPropsTyped> = (props: any) => {
   return (
     <>
       <SpinnerContainer>
-        <SpinnerStyled
-          color={props.color}
-          colorOff={props.colorOff}
-        ></SpinnerStyled>
-        <Counter></Counter>
+        <SpinnerStyled color={props.color} colorOff={props.colorOff} />
+        <Counter color={Tokens.Colors.Text.Primary}></Counter>
       </SpinnerContainer>
     </>
   );

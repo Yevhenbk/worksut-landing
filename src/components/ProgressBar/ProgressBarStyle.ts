@@ -1,20 +1,20 @@
-import styled from 'styled-components'
-import { Tokens } from '../../static/Tokens'
-
-// * Create styled div
-export const ProgressBarContainer = styled.div`
-	width: 100%;
-	height: 4pt;
-`
+import styled from "styled-components";
 
 // * Interface definition for props configuration
 interface ProgressStatusProps {
-	progress: number
+  progress: number;
+  bgColor: string;
 }
+
+// * Create styled div
+export const ProgressBarContainer = styled.div`
+  width: 100%;
+  height: 4pt;
+`;
 
 // * Created sub progress div
 export const ProgressStatus = styled.div<ProgressStatusProps>`
-	background-color: ${Tokens.Colors.Backgrounds.Primary};
-	height: 4pt;
-	width: ${(props) => props.progress}%;
-`
+  background-color: ${(props) => props.bgColor};
+  height: 4pt;
+  width: ${(props) => props.progress}%;
+`;
