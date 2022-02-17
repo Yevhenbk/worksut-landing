@@ -1,3 +1,4 @@
+import { Tokens } from "./../../../static/Tokens";
 import styled from "styled-components";
 // * Interface definition for props configuration
 interface SlideStyle6Props {
@@ -25,6 +26,7 @@ export const DivStyle6 = styled.div`
   top: 16em;
   left: 1.5em;
   text-transform: uppercase;
+  font-weight: ${Tokens.Typography.Weights.Black};
 
   @media (min-width: 500px) {
     top: 18em;
@@ -39,15 +41,19 @@ export const DivStyle6 = styled.div`
     left: 8em;
     text-transform: none;
   }
+  @media (min-width: 1200px) {
+    top: 30em;
+  }
 `;
 export const Icon = styled.img`
   width: 20px;
   height: 20px;
   left: 5px;
-  margin-right: 16px;
+  margin-right: 1em;
 `;
 export const TextIcon = styled.div`
   display: inline-flex;
-  margin-top: 10px;
+  flex-wrap: nowrap;
+  margin-top: 1em;
   text-transform: none;
 `;
