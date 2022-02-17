@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Tokens } from "../../../static/Tokens";
 
 // * Interface definition for props configuration
 interface SlideStyled5Props {
@@ -18,20 +19,28 @@ export const SlideStyled5 = styled.div<SlideStyled5Props>`
 `;
 
 export const DivStyled5 = styled.div`
-  top: 15em;
-  left: 2em;
+  margin: 1em;
+  top: 16em;
+  left: 1.5em;
   position: absolute;
+  text-transform: uppercase;
+  font-weight: ${Tokens.Typography.Weights.Bold};
 
   @media (min-width: 500px) {
-    top: 20em;
+    top: 18em;
     left: 3em;
   }
   @media (min-width: 700px) {
     top: 30em;
-    left: 8em;
+    left: 6em;
   }
   @media (min-width: 900px) {
     top: 20em;
-    left: 12em;
+    left: 8em;
+    text-transform: none;
+  }
+
+  @media (min-width: 1200px) {
+    top: 30em;
   }
 `;
