@@ -40,20 +40,28 @@ const Slide6: React.FC<Slide6PropsTyped> = (props: any) => {
         <DivStyle6>
           <Label
             color={Tokens.Colors.Text.Secondary}
-            /* fontWeight={Tokens.Typography.Weights.Black} */
-            fontSize={Tokens.Typography.Sizes.Mobile.Medium}
             fontFamily={Tokens.Typography.FontFamily.Secondary}
-            text="Apúntate y consigue ventajas exclusivas antes que nadie"
+            text="Apúntate y consigue ventajas"
+          />
+          <Label
+            color={Tokens.Colors.Text.Secondary}
+            fontFamily={Tokens.Typography.FontFamily.Secondary}
+            text="exclusivas antes que nadie"
           />
           <TextIcon>
             <Icon src={iconLike} />
+            <div>
             <Text
               color={Tokens.Colors.Text.Secondary}
-              /* fontWeight={Tokens.Typography.Weights.Black} */
               fontSize={Tokens.Typography.Sizes.Mobile.Small}
-              text="Correo enviado. Échale un ojo a nuestras redes y entérate de todo lo que se cuece."
-              // styler={(text) => Styler.UpperCasing(text)}
+              text="Correo enviado. Échale un ojo a nuestras "
             />
+            <Text
+              color={Tokens.Colors.Text.Secondary}
+              fontSize={Tokens.Typography.Sizes.Mobile.Small}
+              text="redes y entérate de todo lo que se cuece."
+            />
+            </div>
           </TextIcon>
         </DivStyle6>
       </SlideStyled6>

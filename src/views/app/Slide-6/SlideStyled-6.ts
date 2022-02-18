@@ -17,7 +17,6 @@ export const SlideStyled6 = styled.div<SlideStyle6Props>`
   height: ${(props) => props.height}vh;
   display: flex;
   position: relative;
-
   flex-direction: column;
   background-color: ${(props) => props.bgColor};
 `;
@@ -37,19 +36,19 @@ export const DivStyle6 = styled.div`
     left: 6em;
   }
   @media (min-width: 900px) {
-    top: 20em;
+    top: 15em;
     left: 8em;
     text-transform: none;
   }
   @media (min-width: 1200px) {
-    top: 30em;
+    top: 20em;
   }
 `;
 export const Icon = styled.img`
   width: 20px;
   height: 20px;
   left: 5px;
-  margin-right: 1em;
+  margin-right: 0.5em;
 `;
 export const TextIcon = styled.div`
   display: inline-flex;
