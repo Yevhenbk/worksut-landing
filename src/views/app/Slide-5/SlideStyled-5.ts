@@ -24,7 +24,7 @@ export const DivStyled5 = styled.div`
   left: 1.5em;
   position: absolute;
   text-transform: uppercase;
-  font-weight: ${Tokens.Typography.Weights.Bold};
+  font-weight: ${Tokens.Typography.Weights.Bolder};
 
   @media (min-width: 500px) {
     top: 18em;
