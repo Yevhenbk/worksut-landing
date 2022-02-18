@@ -48,10 +48,13 @@ const Slide5: React.FC<Slide5PropsTyped> = (props: any) => {
         <DivStyled5>
           <Label
             color={Tokens.Colors.Text.Secondary}
-            // fontWeight={Tokens.Typography.Weights.Bolder}
-            fontSize={Tokens.Typography.Sizes.Mobile.Medium}
             fontFamily={Tokens.Typography.FontFamily.Secondary}
-            text="Apúntate y consigue ventajas exclusivas antes que nadie"
+            text="Apúntate y consigue ventajas"
+          ></Label>
+          <Label
+            color={Tokens.Colors.Text.Secondary}
+            fontFamily={Tokens.Typography.FontFamily.Secondary}
+            text="exclusivas antes que nadie"
           ></Label>
           <Input
             color={Tokens.Colors.Text.Secondary}
