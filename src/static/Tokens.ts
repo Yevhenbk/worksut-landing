@@ -21,6 +21,7 @@ export const Tokens = {
         xSmall: "22px",
         Small: "32px",
         Regular: "44px",
+        Medium: "70px",
         Large: "100px",
       },
       Mobile: {
@@ -53,6 +54,7 @@ export const Tokens = {
       Secondary: "Gotham",
     },
   },
+
   Icons: {
     Social: {
       Red: {
