@@ -1,10 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { SlideStyled6, Icon, TextIcon } from "./SlideStyled-6";
+import { SlideStyled6, Icon, TextIcon, DivStyle6 } from "./SlideStyled-6";
 import { Tokens } from "../../../static/Tokens";
 import Label from "../../../components/Label/Label";
 import Text from "../../../components/Text/Text";
 import iconLike from "../../../static/img/iconLike.png";
+import SocialSection from "../../../components/SocialSection/SocialSection";
+import LogoTitle from "../../../components/LogoTitle/LogoTitle";
+
 // * Define proptypes object
 const Slide6Proptypes = {
   bgColor: PropTypes.string,
@@ -28,24 +31,57 @@ const Slide6: React.FC<Slide6PropsTyped> = (props: any) => {
         width={props.width}
         height={props.height}
       >
-        <Label
+        <LogoTitle
           color={Tokens.Colors.Text.Secondary}
           fontWeight={Tokens.Typography.Weights.Bolder}
-          fontSize={Tokens.Typography.Sizes.Website.Regular}
           fontFamily={Tokens.Typography.FontFamily.Primary}
-          text="Apúntate y consigue ventajas exclusivas antes que nadie"
-        ></Label>
-        <TextIcon>
-        <Icon src={iconLike} />
-          <Text
+          text="worksut"
+        />
+        <DivStyle6>
+          <Label
             color={Tokens.Colors.Text.Secondary}
-            fontWeight={Tokens.Typography.Weights.Black}
-            fontSize={Tokens.Typography.Sizes.Website.xSmall}
-            text="Correo enviado. Échale un ojo a nuestras redes y entérate de todo lo que se cuece."
-            // styler={(text) => Styler.UpperCasing(text)}
-          ></Text>
-        </TextIcon>
+            fontFamily={Tokens.Typography.FontFamily.Secondary}
+            text="Apúntate y consigue ventajas"
+          />
+          <Label
+            color={Tokens.Colors.Text.Secondary}
+            fontFamily={Tokens.Typography.FontFamily.Secondary}
+            text="exclusivas antes que nadie"
+          />
+          <TextIcon>
+            <Icon src={iconLike} />
+            <div>
+            <Text
+              color={Tokens.Colors.Text.Secondary}
+              fontSize={Tokens.Typography.Sizes.Mobile.Small}
+              text="Correo enviado. Échale un ojo a nuestras "
+            />
+            <Text
+              color={Tokens.Colors.Text.Secondary}
+              fontSize={Tokens.Typography.Sizes.Mobile.Small}
+              text="redes y entérate de todo lo que se cuece."
+            />
+            </div>
+          </TextIcon>
+        </DivStyle6>
       </SlideStyled6>
+
+      <SocialSection
+        networks={[
+          {
+            icon: Tokens.Icons.Social.Red.Instagram,
+            url: Tokens.Icons.URL.Social.Instagram,
+          },
+          {
+            icon: Tokens.Icons.Social.Red.Twitter,
+            url: Tokens.Icons.URL.Social.Twitter,
+          },
+          {
+            icon: Tokens.Icons.Social.Red.Linkedin,
+            url: Tokens.Icons.URL.Social.Linkedin,
+          },
+        ]}
+      />
     </>
   );
 };
