@@ -5,17 +5,18 @@ import { useEffect, useState } from "react";
 import { useAppDispatch, useAppSelector } from "../core/core.app.hooks";
 import "./SampleView.scss";
 import Input from "../components/Input/Input";
+import Label from "../components/Label/Label";
+import LogoTitle from "../components/LogoTitle/LogoTitle";
 import ProgressBar from "../components/ProgressBar/ProgressBar";
 import Scrollable from "../components/Scrollable/Scrollable";
 import SocialSection from "../components/SocialSection/SocialSection";
-import Text from "../components/Text/Text";
-import Slide2 from "../views/app/Slide-2/Slide-2";
-import Slide6 from "../views/app/Slide-6/Slide-6";
-import Label from "../components/Label/Label";
 import Spinner from "../components/Spinner/Spinner";
+import Text from "../components/Text/Text";
 import Slide1 from "../views/app/Slide-1/Slide-1";
-import LogoTitle from "../components/LogoTitle/LogoTitle";
+import Slide2 from "../views/app/Slide-2/Slide-2";
+import Slide4 from "../views/app/Slide-4/Slide-4";
 import Slide5 from "../views/app/Slide-5/Slide-5";
+import Slide6 from "../views/app/Slide-6/Slide-6";
 
 /**
  * ! Main Instance of the application
@@ -162,6 +163,13 @@ const SampleView = () => {
       </div>
       <div className="mt-3">
         <Slide2
+          bgColor={Tokens.Colors.Backgrounds.Primary}
+          width={100}
+          height={100}
+        />
+      </div>
+      <div>
+        <Slide4
           bgColor={Tokens.Colors.Backgrounds.Primary}
           width={100}
           height={100}
