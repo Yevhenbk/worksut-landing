@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
 // * Define style of the div
 export const DivStyleSocialSection = styled.div`
@@ -8,7 +8,6 @@ export const DivStyleSocialSection = styled.div`
   position: relative;
   bottom: 3.5em;
   left: 1.5em;
-
   @media (min-width: 500px) {
     bottom: 4em;
     left: 1.75em;

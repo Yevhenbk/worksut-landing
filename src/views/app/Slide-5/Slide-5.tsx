@@ -50,7 +50,7 @@ const Slide5: React.FC<Slide5PropsTyped> = (props: any) => {
             color={Tokens.Colors.Text.Secondary}
             fontFamily={Tokens.Typography.FontFamily.Secondary}
             text="Apúntate y consigue ventajas"
-          ></Label>
+          />
           <Label
             color={Tokens.Colors.Text.Secondary}
             fontFamily={Tokens.Typography.FontFamily.Secondary}
@@ -78,15 +78,15 @@ const Slide5: React.FC<Slide5PropsTyped> = (props: any) => {
       <SocialSection
         networks={[
           {
-            icon: Tokens.Icons.Social.Red.Instagram,
+            icon: Tokens.Icons.Social.Primary.Instagram,
             url: Tokens.Icons.URL.Social.Instagram,
           },
           {
-            icon: Tokens.Icons.Social.Red.Twitter,
+            icon: Tokens.Icons.Social.Primary.Twitter,
             url: Tokens.Icons.URL.Social.Twitter,
           },
           {
-            icon: Tokens.Icons.Social.Red.Linkedin,
+            icon: Tokens.Icons.Social.Primary.Linkedin,
             url: Tokens.Icons.URL.Social.Linkedin,
           },
         ]}
