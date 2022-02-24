@@ -51,16 +51,16 @@ const Slide6: React.FC<Slide6PropsTyped> = (props: any) => {
           <TextIcon>
             <Icon src={iconLike} />
             <div>
-            <Text
-              color={Tokens.Colors.Text.Secondary}
-              fontSize={Tokens.Typography.Sizes.Mobile.Small}
-              text="Correo enviado. Échale un ojo a nuestras "
-            />
-            <Text
-              color={Tokens.Colors.Text.Secondary}
-              fontSize={Tokens.Typography.Sizes.Mobile.Small}
-              text="redes y entérate de todo lo que se cuece."
-            />
+              <Text
+                color={Tokens.Colors.Text.Secondary}
+                fontSize={Tokens.Typography.Sizes.Mobile.Small}
+                text="Correo enviado. Échale un ojo a nuestras "
+              />
+              <Text
+                color={Tokens.Colors.Text.Secondary}
+                fontSize={Tokens.Typography.Sizes.Mobile.Small}
+                text="redes y entérate de todo lo que se cuece."
+              />
             </div>
           </TextIcon>
         </DivStyle6>
@@ -69,15 +69,15 @@ const Slide6: React.FC<Slide6PropsTyped> = (props: any) => {
       <SocialSection
         networks={[
           {
-            icon: Tokens.Icons.Social.Red.Instagram,
+            icon: Tokens.Icons.Social.Primary.Instagram,
             url: Tokens.Icons.URL.Social.Instagram,
           },
           {
-            icon: Tokens.Icons.Social.Red.Twitter,
+            icon: Tokens.Icons.Social.Primary.Twitter,
             url: Tokens.Icons.URL.Social.Twitter,
           },
           {
-            icon: Tokens.Icons.Social.Red.Linkedin,
+            icon: Tokens.Icons.Social.Primary.Linkedin,
             url: Tokens.Icons.URL.Social.Linkedin,
           },
         ]}

@@ -35,12 +35,12 @@ export const DivStyled5 = styled.div`
     left: 6em;
   }
   @media (min-width: 900px) {
-    top: 20em;
+    top: 15em;
     left: 8em;
     text-transform: none;
   }
 
-  @media (min-width: 1200px) {
-    top: 30em;
+  @media (min-width: 1400px) {
+    top: 20em;
   }
 `;

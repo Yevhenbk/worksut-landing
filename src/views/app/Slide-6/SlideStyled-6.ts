@@ -1,15 +1,12 @@
 import { Tokens } from "./../../../static/Tokens";
 import styled from "styled-components";
+
 // * Interface definition for props configuration
 interface SlideStyle6Props {
   bgColor: string;
   width: number;
   height: number;
 }
-// .TextIcon {
-//   display: flex-inline;
-
-// }
 
 // * Styled landing title
 export const SlideStyled6 = styled.div<SlideStyle6Props>`
@@ -40,7 +37,7 @@ export const DivStyle6 = styled.div`
     left: 8em;
     text-transform: none;
   }
-  @media (min-width: 1200px) {
+  @media (min-width: 1400px) {
     top: 20em;
   }
 `;
@@ -49,6 +46,11 @@ export const Icon = styled.img`
   height: 20px;
   left: 5px;
   margin-right: 0.5em;
+
+  @media (min-width: 500px) {
+    width: 30px;
+    height: 30px;
+  }
 `;
 export const TextIcon = styled.div`
   display: inline-flex;

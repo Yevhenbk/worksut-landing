@@ -1,5 +1,5 @@
-import styled, { keyframes } from 'styled-components'
-import { Tokens } from '../../static/Tokens'
+import styled, { keyframes } from "styled-components";
+import { Tokens } from "../../static/Tokens";
 
 // * Style for container indicator
 export const ScrollableContainer = styled.div`
@@ -12,7 +12,11 @@ export const ScrollableContainer = styled.div`
   justify-content: center;
   align-items: top;
   position: relative;
-  margin: 0 auto 2em;
+  margin: auto;
+  margin-bottom: 5em;
+  @media (max-width: 1400px) {
+    display: none;
+  }
 `;
 
 // * Define keyframes

@@ -1,8 +1,8 @@
-import { Next, Back } from "../functions/functions.slider";
-import { Styler } from "../services/Settings/Settings.Styler";
-import { Tokens } from "../static/Tokens";
 import { useEffect, useState } from "react";
 import { useAppDispatch, useAppSelector } from "../core/core.app.hooks";
+import { Next, Back } from "../functions/functions.slider";
+import { Tokens } from "../static/Tokens";
+import { Styler } from "../services/Settings/Settings.Styler";
 import "./SampleView.scss";
 import Input from "../components/Input/Input";
 import Label from "../components/Label/Label";
@@ -14,6 +14,7 @@ import Spinner from "../components/Spinner/Spinner";
 import Text from "../components/Text/Text";
 import Slide1 from "../views/app/Slide-1/Slide-1";
 import Slide2 from "../views/app/Slide-2/Slide-2";
+import Slide3 from "../views/app/Slide-3/Slide-3";
 import Slide4 from "../views/app/Slide-4/Slide-4";
 import Slide5 from "../views/app/Slide-5/Slide-5";
 import Slide6 from "../views/app/Slide-6/Slide-6";
@@ -60,7 +61,7 @@ const SampleView = () => {
           fontWeight={Tokens.Typography.Weights.Bolder}
           fontFamily={Tokens.Typography.FontFamily.Primary}
           text="Apúntate y consigue ventajas exclusivas antes que nadie"
-        />
+        ></Label>
 
         <Input
           color={Tokens.Colors.Text.Primary}
@@ -140,15 +141,15 @@ const SampleView = () => {
         <SocialSection
           networks={[
             {
-              icon: Tokens.Icons.Social.Red.Instagram,
+              icon: Tokens.Icons.Social.Primary.Instagram,
               url: Tokens.Icons.URL.Social.Instagram,
             },
             {
-              icon: Tokens.Icons.Social.Red.Twitter,
+              icon: Tokens.Icons.Social.Primary.Twitter,
               url: Tokens.Icons.URL.Social.Twitter,
             },
             {
-              icon: Tokens.Icons.Social.Red.Linkedin,
+              icon: Tokens.Icons.Social.Primary.Linkedin,
               url: Tokens.Icons.URL.Social.Linkedin,
             },
           ]}
@@ -161,9 +162,17 @@ const SampleView = () => {
           height={100}
         />
       </div>
-      <div className="mt-3">
+      <div>
         <Slide2
           bgColor={Tokens.Colors.Backgrounds.Primary}
+          width={100}
+          height={100}
+        />
+      </div>
+      <div>
+        <Slide3
+          color={Tokens.Colors.Text.Primary}
+          bgColor={Tokens.Colors.Backgrounds.Secondary}
           width={100}
           height={100}
         />

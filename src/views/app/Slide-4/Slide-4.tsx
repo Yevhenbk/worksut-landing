@@ -29,103 +29,103 @@ type Slide4PropTyped = PropTypes.InferProps<typeof Slide4Proptypes>;
  */
 const Slide4: React.FC<Slide4PropTyped> = (props: any) => {
     return (
-        <>
-            <SlideStyled4
-                bgColor={props.bgColor}
-                width={props.width}
-                height={props.height}
-            >
-                <LogoTitle
-                    color={Tokens.Colors.Text.Primary}
-                    fontWeight={Tokens.Typography.Weights.Bolder}
-                    fontFamily={Tokens.Typography.FontFamily.Primary}
-                    text='worksut'
-                />
-                <HeroContainer>
-                    <Text
-                        color={Tokens.Colors.Text.Primary}
-                        fontWeight={Tokens.Typography.Weights.Bolder}
-                        fontFamily={Tokens.Typography.FontFamily.Secondary}
-                        text='ÚNETE A LA'
-                    />
-                    <SpanNewContainer>
-                        <Text
-                            color={Tokens.Colors.Text.Primary}
-                            fontWeight={Tokens.Typography.Weights.Bolder}
-                            fontFamily={Tokens.Typography.FontFamily.Secondary}
-                            text='NUEVA'
-                        />
-                        <SvgStyled width={255} height={90}>
-                            <CrossLineStyled
-                                strokeColor={Tokens.Colors.Text.Primary}
-                                strokeWidth={12}
-                                x1='5'
-                                y1='10'
-                                x2='250'
-                                y2='80'
-                                opacity='0'
-                            >
-                                <animate
-                                    attributeName='opacity'
-                                    from='0'
-                                    to='1'
-                                    begin='3s'
-                                    dur='0.2s'
-                                    fill='freeze'
-                                />
-                            </CrossLineStyled>
-                            <CrossLineStyled
-                                strokeColor={Tokens.Colors.Text.Primary}
-                                strokeWidth={12}
-                                x1='5'
-                                y1='80'
-                                x2='250'
-                                y2='10'
-                                opacity='0'
-                            >
-                                <animate
-                                    attributeName='opacity'
-                                    from='0'
-                                    to='1'
-                                    begin='3.5s'
-                                    dur='0.2s'
-                                    fill='freeze'
-                                />
-                            </CrossLineStyled>
-                        </SvgStyled>
-                    </SpanNewContainer>
-                    <Text
-                        color={Tokens.Colors.Text.Primary}
-                        fontWeight={Tokens.Typography.Weights.Bolder}
-                        fontFamily={Tokens.Typography.FontFamily.Secondary}
-                        text='FORMA'
-                    />
-
-                    <Text
-                        color={Tokens.Colors.Text.Primary}
-                        fontWeight={Tokens.Typography.Weights.Bolder}
-                        fontFamily={Tokens.Typography.FontFamily.Secondary}
-                        text='DE ENCONTRAR EMPLEO'
-                    />
-                </HeroContainer>
-            </SlideStyled4>
-            <SocialSection
-                networks={[
-                    {
-                        icon: Tokens.Icons.Social.Black.Instagram,
-                        url: Tokens.Icons.URL.Social.Instagram,
-                    },
-                    {
-                        icon: Tokens.Icons.Social.Black.Twitter,
-                        url: Tokens.Icons.URL.Social.Twitter,
-                    },
-                    {
-                        icon: Tokens.Icons.Social.Black.Linkedin,
-                        url: Tokens.Icons.URL.Social.Linkedin,
-                    },
-                ]}
+      <>
+        <SlideStyled4
+          bgColor={props.bgColor}
+          width={props.width}
+          height={props.height}
+        >
+          <LogoTitle
+            color={Tokens.Colors.Text.Primary}
+            fontWeight={Tokens.Typography.Weights.Bolder}
+            fontFamily={Tokens.Typography.FontFamily.Primary}
+            text="worksut"
+          />
+          <HeroContainer>
+            <Text
+              color={Tokens.Colors.Text.Primary}
+              fontWeight={Tokens.Typography.Weights.Bolder}
+              fontFamily={Tokens.Typography.FontFamily.Secondary}
+              text="ÚNETE A LA"
             />
-        </>
+            <SpanNewContainer>
+              <Text
+                color={Tokens.Colors.Text.Primary}
+                fontWeight={Tokens.Typography.Weights.Bolder}
+                fontFamily={Tokens.Typography.FontFamily.Secondary}
+                text="NUEVA"
+              />
+              <SvgStyled width={255} height={90}>
+                <CrossLineStyled
+                  strokeColor={Tokens.Colors.Text.Primary}
+                  strokeWidth={12}
+                  x1="5"
+                  y1="10"
+                  x2="250"
+                  y2="80"
+                  opacity="0"
+                >
+                  <animate
+                    attributeName="opacity"
+                    from="0"
+                    to="1"
+                    begin="3s"
+                    dur="0.2s"
+                    fill="freeze"
+                  />
+                </CrossLineStyled>
+                <CrossLineStyled
+                  strokeColor={Tokens.Colors.Text.Primary}
+                  strokeWidth={12}
+                  x1="5"
+                  y1="80"
+                  x2="250"
+                  y2="10"
+                  opacity="0"
+                >
+                  <animate
+                    attributeName="opacity"
+                    from="0"
+                    to="1"
+                    begin="3.5s"
+                    dur="0.2s"
+                    fill="freeze"
+                  />
+                </CrossLineStyled>
+              </SvgStyled>
+            </SpanNewContainer>
+            <Text
+              color={Tokens.Colors.Text.Primary}
+              fontWeight={Tokens.Typography.Weights.Bolder}
+              fontFamily={Tokens.Typography.FontFamily.Secondary}
+              text="FORMA"
+            />
+
+            <Text
+              color={Tokens.Colors.Text.Primary}
+              fontWeight={Tokens.Typography.Weights.Bolder}
+              fontFamily={Tokens.Typography.FontFamily.Secondary}
+              text="DE ENCONTRAR EMPLEO"
+            />
+          </HeroContainer>
+        </SlideStyled4>
+        <SocialSection
+          networks={[
+            {
+              icon: Tokens.Icons.Social.Secondary.Instagram,
+              url: Tokens.Icons.URL.Social.Instagram,
+            },
+            {
+              icon: Tokens.Icons.Social.Secondary.Twitter,
+              url: Tokens.Icons.URL.Social.Twitter,
+            },
+            {
+              icon: Tokens.Icons.Social.Secondary.Linkedin,
+              url: Tokens.Icons.URL.Social.Linkedin,
+            },
+          ]}
+        />
+      </>
     );
 };
 

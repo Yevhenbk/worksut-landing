@@ -41,6 +41,8 @@ export const Tokens = {
       Italic: "italic",
     },
     LineHeight: {
+      xxxSmall: "18.2px",
+      xxSmall: "20.8px",
       xSmall: "24px",
       Small: "29px",
       Regular: "33px",
@@ -50,14 +52,14 @@ export const Tokens = {
       xxxLarge: "100px",
     },
     FontFamily: {
-      Primary: `Gilroy`,
+      Primary: "Gilroy",
       Secondary: "Gotham",
     },
   },
 
   Icons: {
     Social: {
-      Red: {
+      Primary: {
         Twitter: {
           src: "akar-icons_twitter-fill.png",
           alt: "Twitter icon",
@@ -71,7 +73,7 @@ export const Tokens = {
           alt: "Linkedin icon",
         },
       },
-      Black: {
+      Secondary: {
         Twitter: {
           src: "twitter.png",
           alt: "Twitter icon",

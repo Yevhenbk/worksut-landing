@@ -1,28 +1,28 @@
 body {
-  background-color: black;
-  font-family: "Gilroy";
-  padding: 0 20px;
+    background-color: black;
+    font-family: "Gilroy";
+    padding: 0 20px;
 }
 
 .positionTitle {
-  color: white;
+    color: white;
 }
 
 .positionButton {
-  color: white;
-  background-color: rgb(49, 46, 46);
-  padding: 3%;
+    color: white;
+    background-color: rgb(49, 46, 46);
+    padding: 3%;
 }
 
-.positionButton + .positionButton {
-  margin-left: 1rem;
-  font-size: 2rem;
+.positionButton+.positionButton {
+    margin-left: 1rem;
+    font-size: 2rem;
 }
 
 .titleSections {
-  color: white;
+    color: white;
 }
 
 .mt-3 {
-  margin-top: 3%;
+    margin-top: 3%;
 }
