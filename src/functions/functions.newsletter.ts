@@ -3,7 +3,10 @@ import {NetworkClient, NetworkRequest} from 'worksut-networking';
 import HTTPMethod from 'worksut-networking'
 
 // * Network client
-const Client = new NetworkClient("https://")
+enum APIResourcePaths {
+  SUBSCRIBE = '/subscribe'
+}
+const Client = new NetworkClient(process.env.BACKEND_URL!)
 interface SubscribeResponse {
   message?: string;
   status: boolean;
@@ -43,7 +46,7 @@ export const NewsletterSlice = createSlice({
       headers.append('Content-type', 'application/json');
       headers.append('Accept', 'application/json')
       // * Set request
-      const request = new NetworkRequest<SubscribeResponse>('/subscribe', undefined, headers, undefined, HTTPMethod.post, body);
+      const request = new NetworkRequest<SubscribeResponse>(APIResourcePaths.SUBSCRIBE, undefined, headers, undefined, HTTPMethod.post, body);
       Client.send(request, (dom?: SubscribeResponse, err?: Error) => {
         if (err) {
           state.response = {message: err.message, status: false};
