@@ -8,6 +8,7 @@ export const InputStyled = styled.input`
   color: ${Tokens.Colors.Button.Default};
   padding: 1%;
   width: 100%;
+  outline: none !important;
   font-family: ${Tokens.Typography.FontFamily.Primary};
   ::placeholder {
     color: ${Tokens.Colors.Button.Dissbled};
