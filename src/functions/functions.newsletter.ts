@@ -1,8 +1,18 @@
 import { createSlice } from "@reduxjs/toolkit";
+import {NetworkClient, NetworkRequest} from 'worksut-networking';
+import HTTPMethod from 'worksut-networking'
+
+// * Network client
+const Client = new NetworkClient("https://")
+interface SubscribeResponse {
+  message?: string;
+  status: boolean;
+}
 
 // * DTO representing response from the server
 interface NewsletterResponse {
-  message: string;
+  status: boolean;
+  message?: string;
 }
 
 // * Interface with the object
@@ -26,7 +36,20 @@ export const NewsletterSlice = createSlice({
   reducers: {
     subscribe: (state) => {
       console.log(`Subscribe: ${state.email} to newsletter`);
-      // TODO: Implement API Call
+      // * Create body
+      const body: object = {email: state.email}; 
+      // * Create headers
+      const headers = new Headers();
+      headers.append('Content-type', 'application/json');
+      headers.append('Accept', 'application/json')
+      // * Set request
+      const request = new NetworkRequest<SubscribeResponse>('/subscribe', undefined, headers, undefined, HTTPMethod.post, body);
+      Client.send(request, (dom?: SubscribeResponse, err?: Error) => {
+        if (err) {
+          state.response = {message: err.message, status: false};
+        }
+        state.response = {message: dom?.message, status: dom?.status || false}
+      });
     },
   },
 });
