@@ -9,7 +9,8 @@ import LogoTitle from "../../../components/LogoTitle/LogoTitle";
 import { SlideProptypes, SlidePropTypesTyped } from "../SlidePropTypes";
 
 // * Regexs
-const _EmailValidator = /^\w+([\.-]?\w+)**@\w+([\.-]?\w+)**(\.\w{2,3})+$/;
+const _EmailValidator =
+  /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
 
 const Slide5: React.FC<SlidePropTypesTyped> = (props) => {
   // * Hooks

@@ -20,12 +20,12 @@ export const SliderSlice = createSlice({
   reducers: {
     Next: (state) => {
       state.position += 1;
-      console.log(`Position: ${state.position}, next value`);
+      // console.log(`Position: ${state.position}, next value`);
     },
     Back: (state) => {
       if (state.position > 0) {
         state.position -= 1;
-        console.log(`Position: ${state.position}, back value`);
+        // console.log(`Position: ${state.position}, back value`);
       }
     },
   },
