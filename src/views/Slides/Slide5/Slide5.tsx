@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { SlideStyled5 } from "./SlideStyled5";
 import { Tokens } from "../../../static/Tokens";
 import Label from "../../../components/Label/Label";
@@ -8,13 +8,14 @@ import SocialSection from "../../../components/SocialSection/SocialSection";
 import LogoTitle from "../../../components/LogoTitle/LogoTitle";
 import { SlideProptypes, SlidePropTypesTyped } from "../SlidePropTypes";
 
-const Slide5: React.FC<SlidePropTypesTyped> = (props) => {
-  // * View Builder
-  const [email, setEmail] = useState<string>();
-  useEffect(() => {
-    console.log(email);
-  }, [email]);
+// * Regexs
+const _EmailValidator = /^\w+([\.-]?\w+)**@\w+([\.-]?\w+)**(\.\w{2,3})+$/;
 
+const Slide5: React.FC<SlidePropTypesTyped> = (props) => {
+  // * Hooks
+  const [email, setEmail] = useState<string>();
+
+  // * View Builder
   return (
     <>
       <SlideStyled5>
@@ -37,7 +38,7 @@ const Slide5: React.FC<SlidePropTypesTyped> = (props) => {
             type="email"
             placeholder="Introduce tu correo electronico"
             handleChange={setEmail}
-            validator={new RegExp("^[a-z]{2,}$")}
+            validator={new RegExp(_EmailValidator)}
             wrapper={{
               icon: {
                 enabled: "wrapper_input_enabled.png",
@@ -45,7 +46,7 @@ const Slide5: React.FC<SlidePropTypesTyped> = (props) => {
               },
               alt: "Icon setted to sent email",
               handleClick: () => {
-                console.log("Click");
+                console.log(`Send email ${email}`);
               },
             }}
           />
