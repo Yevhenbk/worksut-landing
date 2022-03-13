@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { SlideStyled5 } from "./SlideStyled5";
 import { Tokens } from "../../../static/Tokens";
 import Label from "../../../components/Label/Label";
@@ -6,15 +6,27 @@ import Input from "../../../components/Input/Input";
 import { DivStyled5 } from "./SlideStyled5";
 import SocialSection from "../../../components/SocialSection/SocialSection";
 import LogoTitle from "../../../components/LogoTitle/LogoTitle";
-import { SlideProptypes, SlidePropTypesTyped } from "../SlidePropTypes";
+import PropTypes from "prop-types";
+
+const Slide5Proptypes = {
+  by: PropTypes.number.isRequired,
+  handleSubmit: PropTypes.func.isRequired,
+  handleEmail: PropTypes.func.isRequired,
+};
+
+type Slide5ProptypesTyped = PropTypes.InferProps<typeof Slide5Proptypes>;
 
 // * Regexs
 const _EmailValidator =
   /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
 
-const Slide5: React.FC<SlidePropTypesTyped> = (props) => {
+const Slide5: React.FC<Slide5ProptypesTyped> = (props) => {
   // * Hooks
   const [email, setEmail] = useState<string>();
+
+  useEffect(() => {
+    props.handleEmail(email);
+  }, [email]);
 
   // * View Builder
   return (
@@ -73,7 +85,7 @@ const Slide5: React.FC<SlidePropTypesTyped> = (props) => {
   );
 };
 
-Slide5.propTypes = SlideProptypes;
+Slide5.propTypes = Slide5Proptypes;
 
 // * Export component
 export default Slide5;

@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import {NetworkClient, NetworkRequest} from 'worksut-networking';
 import HTTPMethod from 'worksut-networking'
 
@@ -37,7 +37,10 @@ export const NewsletterSlice = createSlice({
   name: "Newsletter",
   initialState: InitialNewsletterState,
   reducers: {
-    subscribe: (state) => {
+    SetEmail: (state, action: PayloadAction<string>) => {
+      state.email = action.payload
+    },
+    Subscribe: (state) => {
       console.log(`Subscribe: ${state.email} to newsletter`);
       // * Create body
       const body: object = {email: state.email}; 
@@ -58,5 +61,5 @@ export const NewsletterSlice = createSlice({
 });
 
 // * Export items
-export const { subscribe } = NewsletterSlice.actions;
+export const { Subscribe, SetEmail } = NewsletterSlice.actions;
 export const NewsletterSliceReducer = NewsletterSlice.reducer;

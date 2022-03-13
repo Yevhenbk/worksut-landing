@@ -1,6 +1,7 @@
 import "./app.main.scss";
 import React, { useEffect, useState } from "react";
 import { Next, Back } from "../../functions/functions.slider";
+import { Subscribe, SetEmail } from "../../functions/functions.newsletter";
 import Slide1 from "../Slides/Slide1/Slide1";
 import Slide2 from "../Slides/Slide2/Slide2";
 import Slide3 from "../Slides/Slide3/Slide3";
@@ -54,7 +55,13 @@ const App: React.FC = () => {
       case position > _BatchMapper * 2 && position <= _BatchMapper * 3:
         return <Slide4 by={PositionMapper(position)} />;
       case position > _BatchMapper * 3 && position <= _BatchMapper * 4:
-        return <Slide5 by={PositionMapper(position)} />;
+        return (
+          <Slide5
+            by={PositionMapper(position)}
+            handleSubmit={() => dispatch(Subscribe())}
+            handleEmail={(e: string) => dispatch(SetEmail(e))}
+          />
+        );
       // case position > _BatchMapper * 5:
       //   return <Slide6 by={PositionMapper(position)} />;
       default:
