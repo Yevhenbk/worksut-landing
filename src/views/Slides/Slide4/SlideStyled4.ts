@@ -6,6 +6,8 @@ export const SlideStyled4 = styled.div`
   margin: 0;
   padding: 0;
   width: 100%;
+  display: flex;
+  flex-direction: column;
   height: 100vh;
   background-color: ${Tokens.Colors.Backgrounds.Primary};
 `;
@@ -22,7 +24,7 @@ export const HeroContainer = styled.div<Slide4StyleProptypes>`
   justify-content: center;
   align-content: center;
   text-align: center;
-  margin-top: 40vh;
+  margin-top: 20vh;
   max-width: 70vw;
   transform: scale(${props => props.scale})
   font-size: 26px;
