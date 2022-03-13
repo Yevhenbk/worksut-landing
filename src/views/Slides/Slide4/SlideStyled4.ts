@@ -1,4 +1,4 @@
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 import { Tokens } from "../../../static/Tokens";
 
 // * Styled container for the 4th view
@@ -8,14 +8,13 @@ export const SlideStyled4 = styled.div`
   background-color: ${Tokens.Colors.Backgrounds.Primary};
 `;
 
-// * Define keyframes
-const TextZoomAnimation = keyframes`
-  0% {transform: scale(8);}
-  100% {transform: scale(1);}    
-`;
+// scale 8 => 1
+interface Slide4StyleProptypes {
+  scale: number;
+}
 
 // * Styled container for main text
-export const HeroContainer = styled.div`
+export const HeroContainer = styled.div<Slide4StyleProptypes>`
   margin: auto;
   display: flex;
   flex-wrap: wrap;
@@ -24,7 +23,7 @@ export const HeroContainer = styled.div`
   text-align: center;
   margin-top: 40vh;
   max-width: 70vw;
-  animation: ${TextZoomAnimation} 1.5s linear;
+  transform: scale(${props => props.scale})
   font-size: 26px;
 
   @media (min-width: 500px) {

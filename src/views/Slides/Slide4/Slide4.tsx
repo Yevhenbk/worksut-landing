@@ -9,13 +9,12 @@ import {
   SvgStyled,
   CrossLineStyled,
 } from "./SlideStyled4";
+import { SlideProptypes, SlidePropTypesTyped, T } from "../SlidePropTypes";
 
-/**
- * ! Define 4th view
- * * PatyVilas / 2022-02-12
- *  @param props {props}
- */
-const Slide4: React.FC = () => {
+const _MaxScaleWrapper = 8;
+const _MinimumScaleWrapper = 1;
+
+const Slide4: React.FC<SlidePropTypesTyped> = (props) => {
   return (
     <>
       <SlideStyled4>
@@ -25,7 +24,9 @@ const Slide4: React.FC = () => {
           fontFamily={Tokens.Typography.FontFamily.Primary}
           text="worksut"
         />
-        <HeroContainer>
+        <HeroContainer
+          scale={T.Scale(_MaxScaleWrapper, props.by, _MinimumScaleWrapper)}
+        >
           <Text
             color={Tokens.Colors.Text.Primary}
             fontWeight={Tokens.Typography.Weights.Bolder}
@@ -112,6 +113,8 @@ const Slide4: React.FC = () => {
     </>
   );
 };
+
+Slide4.propTypes = SlideProptypes;
 
 // * Export view
 export default Slide4;

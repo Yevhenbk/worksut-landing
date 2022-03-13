@@ -4,6 +4,7 @@ import { Next, Back } from "../../functions/functions.slider";
 import Slide1 from "../Slides/Slide1/Slide1";
 import Slide2 from "../Slides/Slide2/Slide2";
 import Slide3 from "../Slides/Slide3/Slide3";
+import Slide4 from "../Slides/Slide4/Slide4";
 import { useAppSelector, useAppDispatch } from "../../core/core.app.hooks";
 
 // * Constants
@@ -42,10 +43,12 @@ const App: React.FC = () => {
   // TODO: Pending error and remain slides
   const BuilderSlide = () => {
     switch (true) {
-      case position < _BatchMapper:
+      case position <= _BatchMapper:
         return <Slide2 by={PossitionMapper(position)} />;
-      case position > _BatchMapper && position < _BatchMapper * 2:
+      case position > _BatchMapper && position <= _BatchMapper * 2:
         return <Slide3 by={PossitionMapper(position)} />;
+      case position > _BatchMapper * 2 && position <= _BatchMapper * 3:
+        return <Slide4 by={PossitionMapper(position)} />;
       default:
         return <h1>SLIDE FALTA</h1>;
     }
