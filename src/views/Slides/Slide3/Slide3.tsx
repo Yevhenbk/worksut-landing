@@ -17,6 +17,7 @@ import ProgressBar from "../../../components/ProgressBar/ProgressBar";
 const _TranslateYInitialValue: number = 100;
 const _TranslateXInitialValue: number = -100;
 const _BatchConversion: number = 100;
+const _Sleeper = 0.2;
 
 const Slide3: React.FC<SlidePropTypesTyped> = (props) => {
   // * View Builder
@@ -37,12 +38,14 @@ const Slide3: React.FC<SlidePropTypesTyped> = (props) => {
             translateX={T.TranslateX(
               _TranslateXInitialValue,
               props.by,
-              _BatchConversion
+              _BatchConversion,
+              _Sleeper
             )}
             translateY={T.TranslateY(
               _TranslateYInitialValue,
               props.by,
-              _BatchConversion
+              _BatchConversion,
+              _Sleeper
             )}
           >
             <Text
@@ -65,12 +68,14 @@ const Slide3: React.FC<SlidePropTypesTyped> = (props) => {
             translateX={T.TranslateX(
               _TranslateXInitialValue,
               props.by,
-              _BatchConversion
+              _BatchConversion,
+              _Sleeper
             )}
             translateY={T.TranslateY(
               _TranslateYInitialValue,
               props.by,
-              _BatchConversion
+              _BatchConversion,
+              _Sleeper
             )}
           >
             <Text text="Nuestra misión es dar a las empresas lo que necesitan y a los trabajadores lo que buscan, impulsando un " />
