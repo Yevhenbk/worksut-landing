@@ -9,6 +9,8 @@ import Slide4 from "../Slides/Slide4/Slide4";
 import { useAppSelector, useAppDispatch } from "../../core/core.app.hooks";
 import Slide5 from "../Slides/Slide5/Slide5";
 import Slide6 from "../Slides/Slide6/Slide6";
+import { analytics } from "../../index";
+import { logEvent } from "firebase/analytics";
 import ProgressBar from "../../components/ProgressBar/ProgressBar";
 
 // * Constants
@@ -22,7 +24,14 @@ const App: React.FC = () => {
   const dispatch = useAppDispatch();
 
   useEffect(() => window.removeEventListener("wheel", () => {}));
-  useEffect(() => window.addEventListener("wheel", HandleScroll), []);
+  useEffect(() => {
+    logEvent(analytics, "Start Application");
+    window.addEventListener("wheel", HandleScroll);
+  }, []);
+  useEffect(
+    () => logEvent(analytics, `Loaded state changed - ${loaded}`),
+    [loaded]
+  );
 
   // * Functionalities
   const HandleScroll = (ev: any) => {
@@ -49,22 +58,34 @@ const App: React.FC = () => {
   const BuilderSlide = () => {
     switch (true) {
       case position <= _BatchMapper:
+        logEvent(analytics, "Second Slide - Start");
         return <Slide2 by={PositionMapper(position)} />;
       case position > _BatchMapper && position <= _BatchMapper * 2:
+        logEvent(analytics, "Third Slide - Start");
         return <Slide3 by={PositionMapper(position)} />;
       case position > _BatchMapper * 2 && position <= _BatchMapper * 3:
+        logEvent(analytics, "Fourth Slide - Start");
         return <Slide4 by={PositionMapper(position)} />;
       case position > _BatchMapper * 3 && position <= _BatchMapper * 4:
+        logEvent(analytics, "Fifth Slide - Start");
         return (
           <Slide5
             by={PositionMapper(position)}
-            handleSubmit={() => dispatch(Subscribe())}
-            handleEmail={(e: string) => dispatch(SetEmail(e))}
+            handleSubmit={() => {
+              logEvent(analytics, "Subscribe newsletter - Send action");
+              dispatch(Subscribe());
+            }}
+            handleEmail={(e: string) => {
+              logEvent(analytics, `Update email newsletter - ${e}`);
+              dispatch(SetEmail(e));
+            }}
           />
         );
       // case position > _BatchMapper * 5:
-      //   return <Slide6 by={PositionMapper(position)} />;
+      //   logEvent(analytics, "Sixth Slide - Start");
+      // return <Slide6 by={PositionMapper(position)} />;
       default:
+        logEvent(analytics, "Wrong Slide - Error");
         return <h1>SLIDE FALTA</h1>;
     }
   };
