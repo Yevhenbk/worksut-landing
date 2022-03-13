@@ -41,42 +41,46 @@ const Slide4: React.FC<SlidePropTypesTyped> = (props) => {
               text="NUEVA"
             />
             <SvgStyled width={255} height={90}>
-              <CrossLineStyled
-                strokeColor={Tokens.Colors.Text.Primary}
-                strokeWidth={12}
-                x1="5"
-                y1="10"
-                x2="250"
-                y2="80"
-                opacity="0"
-              >
-                <animate
-                  attributeName="opacity"
-                  from="0"
-                  to="1"
-                  begin="3s"
-                  dur="0.2s"
-                  fill="freeze"
-                />
-              </CrossLineStyled>
-              <CrossLineStyled
-                strokeColor={Tokens.Colors.Text.Primary}
-                strokeWidth={12}
-                x1="5"
-                y1="80"
-                x2="250"
-                y2="10"
-                opacity="0"
-              >
-                <animate
-                  attributeName="opacity"
-                  from="0"
-                  to="1"
-                  begin="3.5s"
-                  dur="0.2s"
-                  fill="freeze"
-                />
-              </CrossLineStyled>
+              {props.by > 0.1 ? (
+                <>
+                  <CrossLineStyled
+                    strokeColor={Tokens.Colors.Text.Primary}
+                    strokeWidth={12}
+                    x1="5"
+                    y1="10"
+                    x2="250"
+                    y2="80"
+                    opacity="0"
+                  >
+                    <animate
+                      attributeName="opacity"
+                      from="0"
+                      to="1"
+                      begin="0.1"
+                      dur="0.05s"
+                      fill="freeze"
+                    />
+                  </CrossLineStyled>
+                  <CrossLineStyled
+                    strokeColor={Tokens.Colors.Text.Primary}
+                    strokeWidth={12}
+                    x1="5"
+                    y1="80"
+                    x2="250"
+                    y2="10"
+                    opacity="0"
+                  >
+                    <animate
+                      attributeName="opacity"
+                      from="0"
+                      to="1"
+                      begin="0.15"
+                      dur="0.1s"
+                      fill="freeze"
+                    />
+                  </CrossLineStyled>
+                </>
+              ) : null}
             </SvgStyled>
           </SpanNewContainer>
           <Text
