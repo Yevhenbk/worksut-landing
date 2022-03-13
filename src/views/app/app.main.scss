@@ -1,4 +1,9 @@
-.container {
-    position: fixed;
-    width: 100%;
+body {
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+    max-height: 100vh;
+    width: 100vw;
+    max-width: 100vw;
+    overflow: hidden;
 }

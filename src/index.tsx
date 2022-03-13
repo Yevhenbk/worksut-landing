@@ -9,8 +9,8 @@ import App from "./views/app/app.main";
 ReactDOM.render(
   <Provider store={Store}>
     <React.StrictMode>
-      <SampleView />
-      {/*  <App /> */}
+      {/* <SampleView /> */}
+      <App />
     </React.StrictMode>
   </Provider>,
   document.getElementById("root")

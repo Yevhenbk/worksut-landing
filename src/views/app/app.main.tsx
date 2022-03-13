@@ -1,7 +1,9 @@
 import "./app.main.scss";
 import React, { useEffect, useState } from "react";
 // import ProgressBar from "../../components/ProgressBar/ProgressBar";
-import { SliderCtrl } from "../Slides/Slides";
+import { SlidePropTypes, SliderCtrl } from "../Slides/Slides";
+import Slide1 from "../Slides/Slide1/Slide1";
+import Slide2 from "../Slides/Slide2/Slide2";
 // import { isPropertySignature } from "typescript";
 
 /**
@@ -11,10 +13,12 @@ import { SliderCtrl } from "../Slides/Slides";
  * * ricklarios - 08/03/22
  */
 
-const App = () => {
+type Slide = React.FC<SlidePropTypes>;
+
+const App: React.FC = () => {
   const [subPosition, setSubPosition] = useState<number>(0);
   const [position, setPosition] = useState<number>(0);
-  const [slide, setSlide] = useState<React.FC>(SliderCtrl.Slides[0]);
+  const [slide, setSlide] = useState<Slide>(SliderCtrl.Slides[0]);
 
   const HandleScroll = () => {
     /* Added Math.floor to round scroll values to tens. */
@@ -54,11 +58,14 @@ const App = () => {
     };
   });
   return (
-    /* Added div to set its position to fixed */
-    <div className="container">
-      {/* <ProgressBar /> */}
-      {slide}
-    </div>
+    <>
+      <Slide1
+        loader={() => {
+          console.log("Se cargo, hora de cambiar");
+        }}
+      />
+      <Slide2 by={10} />
+    </>
   );
 };
 

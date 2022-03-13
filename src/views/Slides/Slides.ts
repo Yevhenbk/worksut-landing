@@ -10,12 +10,12 @@ import Slide6 from "./Slide6/Slide6";
 export module SliderCtrl {
   export const BatchSize: number = 100;
   export const Slides: React.FC[] = [
-    Slide1,
-    Slide2,
-    Slide3,
-    Slide4,
-    Slide5,
-    Slide6,
+    // Slide1,
+    // Slide2,
+    // Slide3,
+    // Slide4,
+    // Slide5,
+    // Slide6,
   ];
 }
 

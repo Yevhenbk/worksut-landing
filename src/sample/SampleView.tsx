@@ -59,6 +59,9 @@ const SampleView = () => {
             colorLeft={Tokens.Colors.Text.Primary}
             colorTop={Tokens.Colors.Text.Secondary}
             colorBottom={Tokens.Colors.Text.Secondary}
+            handleLoaded={() => {
+              console.log("Loaded");
+            }}
           />
         </div>
         <Label
@@ -160,12 +163,12 @@ const SampleView = () => {
           ]}
         />
       </div>
-      <Slide1 />
+      {/* <Slide1 />
       <Slide2 />
       <Slide3 />
       <Slide4 />
       <Slide5 />
-      <Slide6 />
+      <Slide6 /> */}
     </>
   );
 };

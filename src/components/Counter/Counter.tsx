@@ -5,6 +5,7 @@ import { CounterCointainerStyled, CounterStyled } from "./CounterStyled";
 // * Define proptypes
 const CounterPropstypes = {
   color: PropTypes.string,
+  end: PropTypes.func.isRequired,
 };
 
 // * Define the type to infer props
@@ -22,15 +23,17 @@ const Counter: React.FC<CounterPropsTyped> = (props: any) => {
 
   useEffect(() => {
     let start = 0;
-
-    if (start === end) return;
-
+    if (start === end) {
+      return;
+    }
     const incrementTime = (duration / end) * 1000;
-
     const timer = setInterval(() => {
       start += 1;
       setCount(start);
-      if (start === end) clearInterval(timer);
+      if (start === end) {
+        clearInterval(timer);
+        props.end();
+      }
     }, incrementTime);
   }, [duration, end]);
 

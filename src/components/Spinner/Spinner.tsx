@@ -9,6 +9,7 @@ const SpinnerPropstypes = {
   colorRight: PropTypes.string,
   colorBottom: PropTypes.string,
   colorLeft: PropTypes.string,
+  handleLoaded: PropTypes.func.isRequired,
 };
 
 // * Define the type to infer props
@@ -29,7 +30,10 @@ const Spinner: React.FC<SpinnerPropsTyped> = (props: any) => {
           colorTop={props.colorTop}
           colorBottom={props.colorBottom}
         />
-        <Counter color={Tokens.Colors.Text.Primary}></Counter>
+        <Counter
+          end={() => props.handleLoaded()}
+          color={Tokens.Colors.Text.Primary}
+        ></Counter>
       </SpinnerContainer>
     </>
   );
