@@ -1,4 +1,3 @@
-// import { closeSync } from 'fs'
 import * as PropTypes from "prop-types";
 import React, { useState, useEffect } from "react";
 import { Tokens } from "../../../static/Tokens";
