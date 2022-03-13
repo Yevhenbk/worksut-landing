@@ -16,7 +16,6 @@ steps:
 
 - script: |
     npm install
-    npm run clean
   displayName: 'npm install'
 
 - script: |
