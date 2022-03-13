@@ -16,7 +16,6 @@ const Slide2: React.FC = () => {
         <Slide2StyledText>
           <Text
             color={Tokens.Colors.Text.Primary}
-            fontFamily={Tokens.Typography.FontFamily.Primary}
             fontWeight={Tokens.Typography.Weights.Black}
             text="worksut"
           />

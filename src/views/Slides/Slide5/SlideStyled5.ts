@@ -21,8 +21,6 @@ export const DivStyled5 = styled.div`
 
   @media (min-width: 500px) {
     top: 18em;
-    left: 1.5em;
-    right:1.5em;
   }
   @media (min-width: 700px) {
     top: 30em;
@@ -31,7 +29,7 @@ export const DivStyled5 = styled.div`
   }
   @media (min-width: 900px) {
     top: 30em;
-    left: 8em;
+    left: 4em;
     text-transform: none;
     max-width: 700px;
   }
@@ -40,6 +38,10 @@ export const DivStyled5 = styled.div`
     left: 8em;
     right: 20em;
     max-width: 700px;
+  }
+  @media (min-width: 1200px) {
+    top: 20em;
+    right: 20em;
   }
 
   @media (min-width: 1400px) {

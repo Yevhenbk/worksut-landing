@@ -21,7 +21,7 @@ export const DivStyle6 = styled.div`
   @media (min-width: 500px) {
     top: 18em;
     left: 1.5em;
-    right:1.5em;
+    right: 1.5em;
   }
   @media (min-width: 700px) {
     top: 30em;
@@ -33,7 +33,6 @@ export const DivStyle6 = styled.div`
     left: 8em;
     text-transform: none;
     max-width: 700px;
-
   }
   @media (min-width: 1200px) {
     top: 20em;
@@ -45,8 +44,8 @@ export const DivStyle6 = styled.div`
   }
 `;
 export const Icon = styled.img`
-	width: 1em;
-	height: 1em;
+  width: 1em;
+  height: 1em;
   left: 1em;
   right: 1em;
   margin-right: 0.5em;

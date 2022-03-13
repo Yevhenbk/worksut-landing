@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 // * Define style for the icon
 export const ImageIconStyled = styled.a`
-  margin: 0.5%;
+  margin: 0.7%;
   text-decoration: none;
   :hover {
     text-decoration: none;
@@ -14,8 +14,7 @@ export const ImageIconStyled = styled.a`
   .Icon {
     width: 18px;
     @media (min-width: 500px) {
-      width: 29px;
+      width: 24px;
     }
-
   }
 `;

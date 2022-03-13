@@ -22,7 +22,7 @@ export const HeroContainer = styled.div`
   justify-content: center;
   align-content: center;
   text-align: center;
-  margin-top: 30vh;
+  margin-top: 40vh;
   max-width: 70vw;
   animation: ${TextZoomAnimation} 1.5s linear;
   font-size: 26px;
