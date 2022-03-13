@@ -28,7 +28,7 @@ type LanguagePropsTyped = PropTypes.InferProps<
   typeof LanguageSelectorProptypes
 >;
 
-interface Language {
+export interface Language {
   iso: string;
   title: string;
 }

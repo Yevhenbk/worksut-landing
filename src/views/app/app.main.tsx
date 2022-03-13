@@ -12,16 +12,22 @@ import Slide6 from "../Slides/Slide6/Slide6";
 import { analytics } from "../../index";
 import { logEvent } from "firebase/analytics";
 import ProgressBar from "../../components/ProgressBar/ProgressBar";
+import { Languages } from "../../static/Languages";
+import { Language } from "../../components/LanguageSelector/LanguageIcon/LanguageIcon";
 
 // * Constants
 const _BatchMapper: number = 50;
 const _MaxSizer: number = 151;
+const _DefaultIndexLanguage = 1;
 
 const App: React.FC = () => {
   // * Hooks
   const [loaded, setLoaded] = useState<boolean>(false);
   const position = useAppSelector((state) => state.slider.position);
   const dispatch = useAppDispatch();
+  const [language, setLanguage] = useState<Language>(
+    Languages[_DefaultIndexLanguage]
+  );
 
   useEffect(() => window.removeEventListener("wheel", () => {}));
   useEffect(() => {
@@ -42,6 +48,7 @@ const App: React.FC = () => {
     p / _BatchMapper - Math.floor(p / _BatchMapper);
   const ProgressMapper = (p: number) =>
     (p * 100) / _MaxSizer < 100 ? (p * 100) / _MaxSizer : 100;
+  const HandleLanguageSelector = (i: number) => setLanguage(Languages[i]);
 
   // * Builders
   const ViewBuilder = () =>
@@ -55,6 +62,7 @@ const App: React.FC = () => {
     );
 
   // TODO: Pending error and final on slide 6
+  // TODO: Inject language to the slider and received language changes thought function using `HandleLanguageSelector`
   const BuilderSlide = () => {
     switch (true) {
       case position <= _BatchMapper:
