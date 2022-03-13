@@ -1,8 +1,8 @@
 import * as PropTypes from "prop-types";
 
 export const SlideProptypes = {
-  by: PropTypes.number, // [0,1]
-  end: PropTypes.func.isRequired,
+  by: PropTypes.number,
+  end: PropTypes.func,
 };
 
-export type SlidePropTypes = PropTypes.InferProps<typeof SlideProptypes>;
+export type SlidePropTypesTyped = PropTypes.InferProps<typeof SlideProptypes>;

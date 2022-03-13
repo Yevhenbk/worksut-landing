@@ -1,9 +1,15 @@
 import Spinner from "../../../components/Spinner/Spinner";
 import { SlideStyled1 } from "./SlideStyled1";
 import { Tokens } from "../../../static/Tokens";
-import { SlideProptypes, SlidePropTypes } from "../SlidePropTypes";
+import PropTypes from "prop-types";
 
-const Slide1: React.FC<SlidePropTypes> = (props) => {
+const Slide1PropTypes = {
+  end: PropTypes.func.isRequired,
+};
+
+type Slide1PropTypesTyped = PropTypes.InferProps<typeof Slide1PropTypes>;
+
+const Slide1: React.FC<Slide1PropTypesTyped> = (props) => {
   return (
     <>
       <SlideStyled1>
@@ -19,7 +25,7 @@ const Slide1: React.FC<SlidePropTypes> = (props) => {
   );
 };
 
-Slide1.propTypes = SlideProptypes;
+Slide1.propTypes = Slide1PropTypes;
 
 // * Export view
 export default Slide1;

@@ -1,9 +1,14 @@
 import { Slide2Styled, Slide2StyledText } from "./SlideStyled2";
 import Text from "../../../components/Text/Text";
 import { Tokens } from "../../../static/Tokens";
-import { SlidePropTypes } from "../SlidePropTypes";
+import { SlidePropTypesTyped, SlideProptypes } from "../SlidePropTypes";
+import { useEffect } from "react";
 
-const Slide2: React.FC<SlidePropTypes> = () => {
+const Slide2: React.FC<SlidePropTypesTyped> = (props) => {
+  useEffect(() => {
+    console.log(`BY: ${props.by}`);
+  }, [props.by]);
+
   // * View Builder
   return (
     <>
@@ -19,6 +24,8 @@ const Slide2: React.FC<SlidePropTypes> = () => {
     </>
   );
 };
+
+Slide2.propTypes = SlideProptypes;
 
 // * Export component
 export default Slide2;
