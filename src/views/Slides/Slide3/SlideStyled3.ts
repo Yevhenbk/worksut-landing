@@ -1,19 +1,11 @@
-import { Tokens } from "./../../../static/Tokens";
+import { Tokens } from "../../../static/Tokens";
 import styled, { keyframes } from "styled-components";
 
-// * Interface definition for props configuration
-interface Slide3StyledProps {
-  width: string;
-  height: string;
-  transform: string;
-  bgColor: string;
-}
-
 // * Style for Slide3
-export const Slide3Styled = styled.div<Slide3StyledProps>`
-  width: ${(props) => props.width}%;
-  height: ${(props) => props.height}vh;
-  background-color: ${(props) => props.bgColor};
+export const Slide3Styled = styled.div`
+  width: 100%;
+  height: 100vh;
+  background-color: ${Tokens.Colors.Backgrounds.Secondary};
   color: ${Tokens.Colors.Text.Secondary};
   display: flex;
   flex-direction: column;
@@ -79,7 +71,7 @@ export const Slide3TextLeftStyled = styled.div`
   margin: 0.5em 0 1em 1em;
   max-width: 300px;
   opacity: 0;
-  font-family: ${Tokens.Typography.FontFamily.Secondary};
+  font-family: ${Tokens.Typography.FontFamily.Primary};
   font-weight: ${Tokens.Typography.Weights.Bold};
   font-size: ${Tokens.Typography.Sizes.Mobile.Medium};
   line-height: ${Tokens.Typography.LineHeight.xxSmall};

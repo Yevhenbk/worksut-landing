@@ -9,7 +9,7 @@ export const DivStyleSocialSection = styled.div`
   bottom: 3.5em;
   left: 1.5em;
   @media (min-width: 500px) {
-    bottom: 4em;
+    bottom: 3em;
     left: 1.75em;
   }
   @media (min-width: 700px) {

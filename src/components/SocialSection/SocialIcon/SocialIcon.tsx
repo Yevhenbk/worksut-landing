@@ -22,7 +22,7 @@ type SocialIconTypeAlias = PropTypes.InferProps<typeof SocialIconPropTypes>
 const SocialIcon: React.FC<SocialIconTypeAlias> = (props: any) => {
 	return (
     <ImageIconStyled href={props.url} target="_blank">
-      <img
+      <img className='Icon' 
         src={require(`./../../../static/img/social/${props.icon.src}`)}
         alt={props.icon.alt}
       />

@@ -8,21 +8,19 @@ export const InputStyled = styled.input`
   color: ${Tokens.Colors.Button.Default};
   padding: 1%;
   width: 100%;
+  font-family: ${Tokens.Typography.FontFamily.Primary};
   ::placeholder {
-    color: ${Tokens.Colors.Button.Default};
-    font-family: ${Tokens.Typography.FontFamily.Primary};
+    color: ${Tokens.Colors.Button.Dissbled};
   }
   font-weight: ${Tokens.Typography.Weights.Regular};
   font-size: ${Tokens.Typography.Sizes.Mobile.Medium};
-  line-height: ${Tokens.Typography.LineHeight.xLarge};
-  font-family: ${Tokens.Typography.FontFamily.Primary};
 
   @media (min-width: 500px) {
     font-size: ${Tokens.Typography.Sizes.Website.xSmall};
   }
 
   @media (min-width: 700px) {
-    font-size: ${Tokens.Typography.Sizes.Website.Small};
+    font-size: ${Tokens.Typography.Sizes.Website.xSmall};
   }
 `;
 
@@ -30,7 +28,7 @@ export const InputStyled = styled.input`
 export const DivStyled = styled.div`
   border: none;
   border-bottom: 1px solid ${Tokens.Colors.Text.Secondary};
-  padding: 1%;
+  margin-top: 1em;
   display: flex;
   flex-direction: row;
 `;

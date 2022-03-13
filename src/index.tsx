@@ -5,14 +5,14 @@ import { Store } from "./core/core.app.context";
 import SampleView from "./sample/SampleView";
 import { FontStyle } from "./static/fonts/fonts";
 import { Provider } from "react-redux";
-//
-// import App from "./views/app/app.main";
+import App from "./views/app/app.main";
 
 ReactDOM.render(
-	<Provider store={Store}>
-		<React.StrictMode>
-			<SampleView />
-		</React.StrictMode>
-	</Provider>,
-	document.getElementById('root')
-)
+  <Provider store={Store}>
+    <React.StrictMode>
+      <SampleView />
+      {/*  <App /> */}
+    </React.StrictMode>
+  </Provider>,
+  document.getElementById("root")
+);

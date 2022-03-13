@@ -12,12 +12,12 @@ import Scrollable from "../components/Scrollable/Scrollable";
 import SocialSection from "../components/SocialSection/SocialSection";
 import Spinner from "../components/Spinner/Spinner";
 import Text from "../components/Text/Text";
-import Slide1 from "../views/app/Slide-1/Slide-1";
-import Slide2 from "../views/app/Slide-2/Slide-2";
-import Slide3 from "../views/app/Slide-3/Slide-3";
-import Slide4 from "../views/app/Slide-4/Slide-4";
-import Slide5 from "../views/app/Slide-5/Slide-5";
-import Slide6 from "../views/app/Slide-6/Slide-6";
+import Slide1 from "../views/Slides/Slide1/Slide1";
+import Slide2 from "../views/Slides/Slide2/Slide2";
+import Slide3 from "../views/Slides/Slide3/Slide3";
+import Slide4 from "../views/Slides/Slide4/Slide4";
+import Slide5 from "../views/Slides/Slide5/Slide5";
+import Slide6 from "../views/Slides/Slide6/Slide6";
 
 /**
  * ! Main Instance of the application
@@ -52,8 +52,10 @@ const SampleView = () => {
         </div>
         <div>
           <Spinner
-            color={Tokens.Colors.Text.Secondary}
-            colorOff={Tokens.Colors.Text.Primary}
+            colorRight={Tokens.Colors.Text.Secondary}
+            colorLeft={Tokens.Colors.Text.Primary}
+            colorTop={Tokens.Colors.Text.Secondary}
+            colorBottom={Tokens.Colors.Text.Secondary}
           />
         </div>
         <Label
@@ -104,7 +106,7 @@ const SampleView = () => {
         <Text
           color={Tokens.Colors.Text.Secondary}
           fontWeight={Tokens.Typography.Weights.Bold}
-          fontFamily={Tokens.Typography.FontFamily.Secondary}
+          fontFamily={Tokens.Typography.FontFamily.Primary}
           fontSize={Tokens.Typography.Sizes.Website.Small}
           text="bienvenido a la nueva forma de encontrar trabajo y contratar personas."
           styler={(text) => Styler.UpperCasing(text)}
@@ -115,7 +117,7 @@ const SampleView = () => {
         <Text
           color={Tokens.Colors.Text.Secondary}
           fontWeight={Tokens.Typography.Weights.Bold}
-          fontFamily={Tokens.Typography.FontFamily.Secondary}
+          fontFamily={Tokens.Typography.FontFamily.Primary}
           fontSize={Tokens.Typography.Sizes.Website.Small}
           text="bienvenido al cambio."
           styler={(text) => Styler.UpperCasing(text)}
@@ -155,49 +157,12 @@ const SampleView = () => {
           ]}
         />
       </div>
-      <div>
-        <Slide1
-          bgColor={Tokens.Colors.Backgrounds.Primary}
-          width={100}
-          height={100}
-        />
-      </div>
-      <div>
-        <Slide2
-          bgColor={Tokens.Colors.Backgrounds.Primary}
-          width={100}
-          height={100}
-        />
-      </div>
-      <div>
-        <Slide3
-          color={Tokens.Colors.Text.Primary}
-          bgColor={Tokens.Colors.Backgrounds.Secondary}
-          width={100}
-          height={100}
-        />
-      </div>
-      <div>
-        <Slide4
-          bgColor={Tokens.Colors.Backgrounds.Primary}
-          width={100}
-          height={100}
-        />
-      </div>
-      <div>
-        <Slide5
-          bgColor={Tokens.Colors.Backgrounds.Secondary}
-          width={100}
-          height={100}
-        />
-      </div>
-      <div>
-        <Slide6
-          bgColor={Tokens.Colors.Backgrounds.Secondary}
-          width={100}
-          height={100}
-        />
-      </div>
+      <Slide1 />
+      <Slide2 />
+      <Slide3 />
+      <Slide4 />
+      <Slide5 />
+      <Slide6 />
     </>
   );
 };

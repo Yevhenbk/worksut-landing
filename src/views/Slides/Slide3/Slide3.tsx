@@ -1,13 +1,11 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { Styler } from '../../../services/Settings/Settings.Styler'
+import { Styler } from "../../../services/Settings/Settings.Styler";
 import {
   Slide3Styled,
   Slide3ContentLeftStyled,
   Slide3ContentRightStyled,
   Slide3TextLeftStyled,
   Slide3TextRightStyled,
-} from "./SlideStyled-3";
+} from "./SlideStyled3";
 import { Tokens } from "../../../static/Tokens";
 import Text from "../../../components/Text/Text";
 import SocialSection from "../../../components/SocialSection/SocialSection";
@@ -15,34 +13,17 @@ import Scrollable from "../../../components/Scrollable/Scrollable";
 import ProgressBar from "../../../components/ProgressBar/ProgressBar";
 import LogoTitle from "../../../components/LogoTitle/LogoTitle";
 
-
-// * Define proptypes object
-const Slide3Proptypes = {
-  width: PropTypes.number,
-  height: PropTypes.number,
-  color: PropTypes.string,
-  bgColor: PropTypes.string,
-};
-
-// * Define the type to infer props
-type Slide3PropsTyped = PropTypes.InferProps<typeof Slide3Proptypes>;
-
 /**
  * ! Define the landing title component
  * * danielcostarosenthal - 2022/02/08
  * @param props {props}
  */
 
-const Slide3: React.FC<Slide3PropsTyped> = (props: any) => {
+const Slide3: React.FC = () => {
   // * View Builder
   return (
     <>
-      <Slide3Styled
-        width={props.width}
-        height={props.height}
-        transform={props.transform}
-        bgColor={props.bgColor}
-      >
+      <Slide3Styled>
         <LogoTitle
           fontWeight={Tokens.Typography.Weights.Bolder}
           fontFamily={Tokens.Typography.FontFamily.Primary}
@@ -62,13 +43,13 @@ const Slide3: React.FC<Slide3PropsTyped> = (props: any) => {
             <Text
               text="bienvenido a la nueva forma de encontrar trabajo y contratar personas."
               styler={(text) => Styler.UpperCasing(text)}
-              fontFamily={Tokens.Typography.FontFamily.Secondary}
+              fontFamily={Tokens.Typography.FontFamily.Primary}
             />
             <br />
             <Text
               text="bienvenido al cambio."
               styler={(text) => Styler.UpperCasing(text)}
-              fontFamily={Tokens.Typography.FontFamily.Secondary}
+              fontFamily={Tokens.Typography.FontFamily.Primary}
             />
           </Slide3TextLeftStyled>
         </Slide3ContentLeftStyled>
@@ -119,8 +100,5 @@ const Slide3: React.FC<Slide3PropsTyped> = (props: any) => {
   );
 };
 
-// * Proptypes
-Slide3.propTypes = Slide3Proptypes
-
 // * Export component
-export default Slide3
+export default Slide3;

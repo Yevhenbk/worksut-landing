@@ -12,7 +12,7 @@ export const Tokens = {
     Button: {
       Default: "#F64F48",
       Press: "#DF473F",
-      Dissbled: "#EFAEAB",
+      Dissbled: "#883B39",
     },
   },
   Typography: {
@@ -23,10 +23,13 @@ export const Tokens = {
         Regular: "44px",
         Medium: "70px",
         Large: "100px",
+        xLarge: "200px",
       },
       Mobile: {
+        xSmall: "11px",
         Small: "14px",
         Medium: "16px",
+        Large: "18px",
       },
     },
     Weights: {
@@ -52,8 +55,7 @@ export const Tokens = {
       xxxLarge: "100px",
     },
     FontFamily: {
-      Primary: "Gilroy",
-      Secondary: "Gotham",
+      Primary: "Poppins",
     },
   },
 

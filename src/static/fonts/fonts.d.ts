@@ -1,18 +1,12 @@
-declare module '*.ttf'
-import GilroyRegular from './GilroyRegular.ttf'
-import { createGlobalStyle } from 'styled-components'
-import GothamMedium from './GothamMedium.ttf'
+declare module "*.ttf";
+import { createGlobalStyle } from "styled-components";
+import PoppinsRegular from "./Poppins-Regular.ttf";
 
 // * Export font style as a global property
 export const FontStyle = createGlobalStyle`
     @font-face {
-        font-family: 'Gilroy';
-        src: local('Gilroy'), local('Gilroy'), url(${GilroyRegular}), format('ttf');
+        font-family: 'Poppins';
+        src: local('Poppins'), local('Poppins'), url(${PoppinsRegular}), format('ttf');
         font-style: normal
     }
-       @font-face {
-        font-family: 'Gotham';
-        src: local('Gotham'), local('Gotham'), url(${GothamMedium}), format('ttf');
-        font-style: normal
-    }
-`
+`;

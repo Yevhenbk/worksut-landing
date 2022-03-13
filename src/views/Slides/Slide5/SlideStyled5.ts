@@ -1,46 +1,49 @@
 import styled from "styled-components";
 import { Tokens } from "../../../static/Tokens";
 
-// * Interface definition for props configuration
-interface SlideStyled5Props {
-  bgColor: string;
-  width: number;
-  height: number;
-}
-
 // * Styled landing title
-export const SlideStyled5 = styled.div<SlideStyled5Props>`
-  width: ${(props) => props.width}%;
-  height: ${(props) => props.height}vh;
-  background-color: ${(props) => props.bgColor};
+export const SlideStyled5 = styled.div`
+  width: 100%;
+  height: 100vh;
+  background-color: ${Tokens.Colors.Backgrounds.Secondary};
   display: flex;
-  flex-direction: column;
   position: relative;
+  flex-direction: column;
 `;
 
 export const DivStyled5 = styled.div`
-  margin: 1em;
   top: 16em;
-  left: 1.5em;
+  left: 1em;
+  right: 0.5em;
   position: absolute;
   text-transform: uppercase;
   font-weight: ${Tokens.Typography.Weights.Bolder};
 
   @media (min-width: 500px) {
     top: 18em;
-    left: 3em;
+    left: 1.5em;
+    right:1.5em;
   }
   @media (min-width: 700px) {
     top: 30em;
-    left: 6em;
+    left: 3em;
+    max-width: 600px;
   }
   @media (min-width: 900px) {
-    top: 15em;
+    top: 30em;
     left: 8em;
     text-transform: none;
+    max-width: 700px;
+  }
+  @media (min-width: 1200px) {
+    top: 20em;
+    left: 8em;
+    right: 20em;
+    max-width: 700px;
   }
 
   @media (min-width: 1400px) {
     top: 20em;
+    max-width: 700px;
   }
 `;

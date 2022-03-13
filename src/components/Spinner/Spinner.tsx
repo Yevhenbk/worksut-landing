@@ -5,8 +5,10 @@ import { Tokens } from "../../static/Tokens";
 
 // * Define proptypes
 const SpinnerPropstypes = {
-  color: PropTypes.string,
-  colorOff: PropTypes.string,
+  colorTop: PropTypes.string,
+  colorRight: PropTypes.string,
+  colorBottom: PropTypes.string,
+  colorLeft: PropTypes.string,
 };
 
 // * Define the type to infer props
@@ -21,7 +23,12 @@ const Spinner: React.FC<SpinnerPropsTyped> = (props: any) => {
   return (
     <>
       <SpinnerContainer>
-        <SpinnerStyled color={props.color} colorOff={props.colorOff} />
+        <SpinnerStyled
+          colorRight={props.colorRight}
+          colorLeft={props.colorLeft}
+          colorTop={props.colorTop}
+          colorBottom={props.colorBottom}
+        />
         <Counter color={Tokens.Colors.Text.Primary}></Counter>
       </SpinnerContainer>
     </>

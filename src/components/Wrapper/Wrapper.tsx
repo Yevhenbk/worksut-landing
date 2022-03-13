@@ -32,7 +32,7 @@ const Wrapper: React.FC<WrapperProps> = (props: any) => {
       onClick={HandleClick}
       type="button"
     >
-      <img
+      <img className='IconWrapper'
         src={require(`../../static/img/${
           props.disabled ? props.icon.enabled : props.icon.disabled
         }`)}

@@ -15,7 +15,6 @@ export const LabelStyled = styled.div<LabelStyledProps>`
   color: ${(props) => props.color};
   font-weight: ${(props) => props.fontWeight};
   font-size: ${Tokens.Typography.Sizes.Mobile.Small};
-  max-width: max-content;
   font-family: ${(props) => props.fontFamily};
 
   @media (min-width: 500px) {
@@ -27,6 +26,9 @@ export const LabelStyled = styled.div<LabelStyledProps>`
   }
 
   @media (min-width: 900px) {
+    font-size: ${Tokens.Typography.Sizes.Website.Regular};
+  }
+  @media (min-width: 1200px) {
     font-size: ${Tokens.Typography.Sizes.Website.Regular};
   }
 `;
