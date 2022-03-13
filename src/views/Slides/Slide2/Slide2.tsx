@@ -2,7 +2,6 @@ import { Slide2Styled, Slide2StyledText } from "./SlideStyled2";
 import Text from "../../../components/Text/Text";
 import { Tokens } from "../../../static/Tokens";
 import { SlidePropTypesTyped, SlideProptypes } from "../SlidePropTypes";
-import { useEffect } from "react";
 
 const _Slide2Configurations = [
   {
@@ -18,12 +17,9 @@ const _Slide2Configurations = [
     opacity: 1,
   },
 ];
-const _Slide2Steps = _Slide2Configurations.length;
+const _Slide2Steps: number = _Slide2Configurations.length;
 
 const Slide2: React.FC<SlidePropTypesTyped> = (props) => {
-  useEffect(() => {
-    console.log(`BY: ${props.by}`);
-  }, [props.by]);
 
   // * Functionalities
   const BreakPoint = (s: number): number => (1 / _Slide2Steps) * s;
