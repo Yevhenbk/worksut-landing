@@ -39,7 +39,7 @@ const SampleView = () => {
       <LanguageSelector
         languages={Languages}
         onLanguageChanged={(index: number) => {
-          console.log(`Language changed`);
+          console.log(`Language changed ${index}`);
         }}
         selectedIndex={1}
       ></LanguageSelector>
