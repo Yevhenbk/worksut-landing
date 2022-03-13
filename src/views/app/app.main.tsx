@@ -9,7 +9,6 @@ import { useAppSelector, useAppDispatch } from "../../core/core.app.hooks";
 import Slide5 from "../Slides/Slide5/Slide5";
 import Slide6 from "../Slides/Slide6/Slide6";
 import ProgressBar from "../../components/ProgressBar/ProgressBar";
-import { Tokens } from "../../static/Tokens";
 
 // * Constants
 const _BatchMapper: number = 50;
@@ -40,10 +39,7 @@ const App: React.FC = () => {
       <Slide1 end={() => setLoaded(true)} />
     ) : (
       <>
-        <ProgressBar
-          progress={ProgressMapper(position)}
-          bgColor={Tokens.Colors.Button.Default}
-        />
+        <ProgressBar progress={ProgressMapper(position)} />
         {BuilderSlide()}
       </>
     );

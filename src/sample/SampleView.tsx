@@ -139,7 +139,7 @@ const SampleView = () => {
         />
       </div>
       <div className="mt-3">
-        <ProgressBar progress={80} bgColor={Tokens.Colors.Button.Default} />
+        <ProgressBar progress={80} />
       </div>
       <div className="mt-3">
         <Scrollable />

@@ -10,9 +10,9 @@ import { Tokens } from "../../../static/Tokens";
 import Text from "../../../components/Text/Text";
 import SocialSection from "../../../components/SocialSection/SocialSection";
 import Scrollable from "../../../components/Scrollable/Scrollable";
-import ProgressBar from "../../../components/ProgressBar/ProgressBar";
 import LogoTitle from "../../../components/LogoTitle/LogoTitle";
 import { SlideProptypes, SlidePropTypesTyped, T } from "../SlidePropTypes";
+import ProgressBar from "../../../components/ProgressBar/ProgressBar";
 
 const _TranslateYInitialValue: number = 100;
 const _TranslateXInitialValue: number = -100;
@@ -30,13 +30,7 @@ const Slide3: React.FC<SlidePropTypesTyped> = (props) => {
         />
         <Slide3ContentLeftStyled>
           <div className="progress">
-            <ProgressBar
-              progress={100}
-              bgColor={Tokens.Colors.Button.Default}
-              height={2}
-              dur={"1.5"}
-              delay={"0"}
-            />
+            <ProgressBar progress={100} />
           </div>
           <Slide3TextLeftStyled
             opacity={T.Opacity(props.by)}
@@ -92,14 +86,7 @@ const Slide3: React.FC<SlidePropTypesTyped> = (props) => {
             />
           </Slide3TextRightStyled>
           <div className="progressRight">
-            <ProgressBar
-              progress={100}
-              bgColor={Tokens.Colors.Button.Default}
-              height={2}
-              dur={"1.5"}
-              delay={"4"}
-              fill={"both"}
-            />
+            <ProgressBar progress={100} />
           </div>
         </Slide3ContentRightStyled>
       </Slide3Styled>

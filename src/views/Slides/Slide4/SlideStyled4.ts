@@ -3,12 +3,13 @@ import { Tokens } from "../../../static/Tokens";
 
 // * Styled container for the 4th view
 export const SlideStyled4 = styled.div`
+  margin: 0;
+  padding: 0;
   width: 100%;
   height: 100vh;
   background-color: ${Tokens.Colors.Backgrounds.Primary};
 `;
 
-// scale 8 => 1
 interface Slide4StyleProptypes {
   scale: number;
 }
