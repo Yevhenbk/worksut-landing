@@ -1,6 +1,6 @@
 // import { closeSync } from 'fs'
 import * as PropTypes from "prop-types";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Tokens } from "../../../static/Tokens";
 import {
   LanguageIconHeaderStyled,
@@ -20,7 +20,7 @@ const LanguageSelectorProptypes = {
     }).isRequired
   ).isRequired,
   selectedIndex: PropTypes.number.isRequired,
-  languageChanged: PropTypes.func.isRequired,
+  onLanguageChanged: PropTypes.func.isRequired,
 };
 
 // * Define the type to infer props
@@ -33,11 +33,6 @@ interface Language {
   title: string;
 }
 
-// * Constants
-const __LangsLength = languages.length;
-const _Arc = Math.PI * (1 / __LangsLength);
-const _Radius = 45;
-
 /**
  * ! Language select component
  * * PatyVilas - 2022/02/15
@@ -45,6 +40,11 @@ const _Radius = 45;
 const LanguageSelector: React.FC<LanguagePropsTyped> = (props) => {
   const [selectedIndex, setSelectedIndex] = useState<number>(0);
   const [isOpen, setIsOpen] = useState<boolean>(false);
+
+  // * Constants
+  const __LangsLength = props.languages.length;
+  const _Arc = Math.PI * (1 / __LangsLength);
+  const _Radius = 45;
 
   useEffect(() => setSelectedIndex(props.selectedIndex), []);
 
@@ -72,14 +72,14 @@ const LanguageSelector: React.FC<LanguagePropsTyped> = (props) => {
   const HandleLanguageChanged = (lan: Language) => {
     setSelectedIndex(props.languages.indexOf(lan));
     setIsOpen(!isOpen);
-    languageChanged(languages.indexOf(lan));
+    props.onLanguageChanged(props.languages.indexOf(lan));
   };
 
   return (
     <>
       <LanguageSelectorContainerStyled color={Tokens.Colors.Button.Default}>
         <LanguageIconHeaderStyled onClick={OpenSelector}>
-          {languages[selectedIndex].iso.toLowerCase()}
+          {props.languages[selectedIndex].iso.toLowerCase()}
         </LanguageIconHeaderStyled>
         {isOpen && (
           <LanguageSelectorStyled>
