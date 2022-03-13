@@ -17,9 +17,10 @@ const LanguageSelectorProptypes = {
     PropTypes.shape({
       iso: PropTypes.string.isRequired,
       title: PropTypes.string.isRequired,
-      default: PropTypes.bool.isRequired,
     }).isRequired
   ).isRequired,
+  selectedIndex: PropTypes.number.isRequired,
+  languageChanged: PropTypes.func.isRequired,
 };
 
 // * Define the type to infer props
@@ -30,25 +31,27 @@ type LanguagePropsTyped = PropTypes.InferProps<
 interface Language {
   iso: string;
   title: string;
-  default: boolean;
 }
+
+// * Constants
+const __LangsLength = languages.length;
+const _Arc = Math.PI * (1 / __LangsLength);
+const _Radius = 45;
 
 /**
  * ! Language select component
  * * PatyVilas - 2022/02/15
  */
-const LanguageSelector: React.FC<LanguagePropsTyped> = ({ languages }: any) => {
+const LanguageSelector: React.FC<LanguagePropsTyped> = (props) => {
   const [selectedIndex, setSelectedIndex] = useState<number>(0);
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
-  const langsLength = languages.length;
-  const arc = Math.PI * (1 / langsLength);
-  const radius = 45;
+  useEffect(() => setSelectedIndex(props.selectedIndex), []);
 
   const CountPosition = (i: number) => {
-    const angle = i * arc - 199.7;
-    const x = radius * Math.cos(angle);
-    const y = radius * Math.sin(angle);
+    const angle = i * _Arc - 199.7;
+    const x = _Radius * Math.cos(angle);
+    const y = _Radius * Math.sin(angle);
 
     const left = 80 + x + "%";
     const top = 5 + y + "%";
@@ -59,29 +62,23 @@ const LanguageSelector: React.FC<LanguagePropsTyped> = ({ languages }: any) => {
   };
 
   const LanguagesForSelection = () => {
-    return languages.filter((lan: Language, i: number) => i !== selectedIndex);
+    return props.languages.filter(
+      (lan: Language, i: number) => i !== selectedIndex
+    );
   };
-
-  const GetDefaultLanguage = () =>
-    languages.filter((lan: Language) => lan.default);
 
   const OpenSelector = () => setIsOpen(!isOpen);
 
   const HandleLanguageChanged = (lan: Language) => {
-    setSelectedIndex(languages.indexOf(lan));
+    setSelectedIndex(props.languages.indexOf(lan));
     setIsOpen(!isOpen);
-    console.log(
-      `Language changed to ${languages[languages.indexOf(lan)].title}`
-    );
+    languageChanged(languages.indexOf(lan));
   };
 
   return (
     <>
       <LanguageSelectorContainerStyled color={Tokens.Colors.Button.Default}>
-        <LanguageIconHeaderStyled
-          onClick={OpenSelector}
-          onChange={GetDefaultLanguage}
-        >
+        <LanguageIconHeaderStyled onClick={OpenSelector}>
           {languages[selectedIndex].iso.toLowerCase()}
         </LanguageIconHeaderStyled>
         {isOpen && (

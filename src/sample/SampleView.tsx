@@ -36,7 +36,13 @@ const SampleView = () => {
 
   return (
     <>
-      <LanguageSelector languages={Languages}></LanguageSelector>
+      <LanguageSelector
+        languages={Languages}
+        languageChanged={(index: number) => {
+          console.log(`Language changed`);
+        }}
+        selectedIndex={1}
+      ></LanguageSelector>
       <LogoTitle
         color={Tokens.Colors.Text.Secondary}
         fontWeight={Tokens.Typography.Weights.Bolder}
