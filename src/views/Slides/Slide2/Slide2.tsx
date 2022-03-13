@@ -1,13 +1,7 @@
 import { Slide2Styled, Slide2StyledText } from "./SlideStyled2";
 import Text from "../../../components/Text/Text";
 import { Tokens } from "../../../static/Tokens";
-import { SlidePropTypes } from "../Slides";
-
-/**
- * ! Define the landing title component
- * * danielcostarosenthal - 2022/02/07
- * @param props {props}
- */
+import { SlidePropTypes } from "../SlidePropTypes";
 
 const Slide2: React.FC<SlidePropTypes> = () => {
   // * View Builder

@@ -1,17 +1,9 @@
 import Spinner from "../../../components/Spinner/Spinner";
 import { SlideStyled1 } from "./SlideStyled1";
 import { Tokens } from "../../../static/Tokens";
-// import { SlideProptypes, SlidePropTypes } from '../SlidePropTypes';
-// import { produceWithPatches } from "immer";
-import PropTypes from "prop-types";
+import { SlideProptypes, SlidePropTypes } from "../SlidePropTypes";
 
-const Slide1Proptypes = {
-  loader: PropTypes.func.isRequired,
-};
-
-type Slide1ProptypesTyped = PropTypes.InferProps<typeof Slide1Proptypes>;
-
-const Slide1: React.FC<Slide1ProptypesTyped> = (props) => {
+const Slide1: React.FC<SlidePropTypes> = (props) => {
   return (
     <>
       <SlideStyled1>
@@ -20,14 +12,14 @@ const Slide1: React.FC<Slide1ProptypesTyped> = (props) => {
           colorLeft={Tokens.Colors.Text.Secondary}
           colorTop={Tokens.Colors.Text.Primary}
           colorBottom={Tokens.Colors.Text.Primary}
-          handleLoaded={() => props.loader()}
+          handleLoaded={() => props.end()}
         />
       </SlideStyled1>
     </>
   );
 };
 
-Slide1.propTypes = Slide1Proptypes;
+Slide1.propTypes = SlideProptypes;
 
 // * Export view
 export default Slide1;
