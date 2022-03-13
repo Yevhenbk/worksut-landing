@@ -93,7 +93,7 @@ export const Tokens = {
     URL: {
       Social: {
         Twitter: "https://twitter.com/worksut_",
-        Instagram: "https://www.instagram.com/worksut_/",
+        Instagram: "https://www.instagram.com/worksut_es/",
         Linkedin: "https://www.linkedin.com/company/78337375/admin/",
       },
     },
