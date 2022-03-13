@@ -23,7 +23,8 @@ const App: React.FC = () => {
     dispatch(ev.deltaY > 0 ? Next() : Back());
   };
 
-  const PossitionMapper = (p: number): number => p / _BatchMapper;
+  const PossitionMapper = (p: number): number =>
+    p / _BatchMapper - Math.floor(p / _BatchMapper);
 
   // * Builders
   const ViewBuilder = () =>
@@ -38,18 +39,15 @@ const App: React.FC = () => {
       BuilderSlide()
     );
 
+  // TODO: Pending error and remain slides
   const BuilderSlide = () => {
-    if (position > 50) {
-      return <Slide3 />;
-    } else {
-      return (
-        <Slide2
-          end={() => {
-            console.log("Fuera");
-          }}
-          by={PossitionMapper(position)}
-        />
-      );
+    switch (true) {
+      case position < _BatchMapper:
+        return <Slide2 by={PossitionMapper(position)} />;
+      case position > _BatchMapper && position < _BatchMapper * 2:
+        return <Slide3 by={PossitionMapper(position)} />;
+      default:
+        return <h1>SLIDE FALTA</h1>;
     }
   };
 

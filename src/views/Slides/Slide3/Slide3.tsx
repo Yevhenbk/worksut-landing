@@ -12,14 +12,13 @@ import SocialSection from "../../../components/SocialSection/SocialSection";
 import Scrollable from "../../../components/Scrollable/Scrollable";
 import ProgressBar from "../../../components/ProgressBar/ProgressBar";
 import LogoTitle from "../../../components/LogoTitle/LogoTitle";
+import { SlideProptypes, SlidePropTypesTyped, T } from "../SlidePropTypes";
 
-/**
- * ! Define the landing title component
- * * danielcostarosenthal - 2022/02/08
- * @param props {props}
- */
+const _TranslateYInitialValue: number = 100;
+const _TranslateXInitialValue: number = -100;
+const _BatchConversion: number = 100;
 
-const Slide3: React.FC = () => {
+const Slide3: React.FC<SlidePropTypesTyped> = (props) => {
   // * View Builder
   return (
     <>
@@ -39,7 +38,19 @@ const Slide3: React.FC = () => {
               delay={"0"}
             />
           </div>
-          <Slide3TextLeftStyled>
+          <Slide3TextLeftStyled
+            opacity={T.Opacity(props.by)}
+            translateX={T.TranslateX(
+              _TranslateXInitialValue,
+              props.by,
+              _BatchConversion
+            )}
+            translateY={T.TranslateY(
+              _TranslateYInitialValue,
+              props.by,
+              _BatchConversion
+            )}
+          >
             <Text
               text="bienvenido a la nueva forma de encontrar trabajo y contratar personas."
               styler={(text) => Styler.UpperCasing(text)}
@@ -55,7 +66,19 @@ const Slide3: React.FC = () => {
         </Slide3ContentLeftStyled>
         <Scrollable />
         <Slide3ContentRightStyled>
-          <Slide3TextRightStyled>
+          <Slide3TextRightStyled
+            opacity={T.Opacity(props.by)}
+            translateX={T.TranslateX(
+              _TranslateXInitialValue,
+              props.by,
+              _BatchConversion
+            )}
+            translateY={T.TranslateY(
+              _TranslateYInitialValue,
+              props.by,
+              _BatchConversion
+            )}
+          >
             <Text text="Nuestra misión es dar a las empresas lo que necesitan y a los trabajadores lo que buscan, impulsando un " />
             <Text
               text="innovador sistema y una nueva experiencia de usuario nunca antes vista."
@@ -99,6 +122,8 @@ const Slide3: React.FC = () => {
     </>
   );
 };
+
+Slide3.propTypes = SlideProptypes;
 
 // * Export component
 export default Slide3;

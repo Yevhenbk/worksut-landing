@@ -1,5 +1,10 @@
 import { Tokens } from "../../../static/Tokens";
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
+interface Slide3AnimationsType {
+  translateY: number;
+  opacity: number;
+  translateX: number;
+}
 
 // * Style for Slide3
 export const Slide3Styled = styled.div`
@@ -24,20 +29,6 @@ export const Slide3Styled = styled.div`
   }
   @media (min-width: 1200px) {
     flex-direction: row;
-  }
-`;
-
-// * Define keyframes
-const UpwardAnimation = keyframes`
-  to {
-	  transform: translateY(0vh);
-	  opacity: 1;
-	}
-`;
-const SidewaysAnimation = keyframes`
-  to{
-    transform: translateX(0vh);
-    opacity: 1;
   }
 `;
 
@@ -67,16 +58,15 @@ export const Slide3ContentLeftStyled = styled.div`
 `;
 
 // * Style for the left text
-export const Slide3TextLeftStyled = styled.div`
+export const Slide3TextLeftStyled = styled.div<Slide3AnimationsType>`
   margin: 0.5em 0 1em 1em;
   max-width: 300px;
-  opacity: 0;
+  opacity: ${props => props.opacity};
   font-family: ${Tokens.Typography.FontFamily.Primary};
   font-weight: ${Tokens.Typography.Weights.Bold};
   font-size: ${Tokens.Typography.Sizes.Mobile.Medium};
   line-height: ${Tokens.Typography.LineHeight.xxSmall};
-  transform: translateX(-100vh);
-  animation: ${SidewaysAnimation} 2s linear forwards;
+  transform: translateX(${props => props.translateX}vh);
 
   @media (min-width: 500px) {
     margin-left: 1.5em;
@@ -101,8 +91,7 @@ export const Slide3TextLeftStyled = styled.div`
     max-width: 550px;
     margin-left: 5em;
     margin-right: -3em;
-    transform: translateY(100vh);
-    animation: ${UpwardAnimation} 2s linear forwards;
+    transform: translateY(${props => props.translateY}vh);
   }
   @media (min-width: 1800px) {
     margin-left: 10em;
@@ -132,17 +121,16 @@ export const Slide3ContentRightStyled = styled.div`
 `;
 
 // * Style for the right text
-export const Slide3TextRightStyled = styled.div`
+export const Slide3TextRightStyled = styled.div<Slide3AnimationsType>`
   margin-left: 1em;
   margin-bottom: 1em;
   max-width: 300px;
-  opacity: 0;
+  opacity: ${props => props.opacity};
   font-family: ${Tokens.Typography.FontFamily.Primary};
   font-weight: ${Tokens.Typography.Weights.SemiBold};
   font-size: ${Tokens.Typography.Sizes.Mobile.Small};
   line-height: ${Tokens.Typography.LineHeight.xxxSmall};
-  transform: translateX(100vh);
-  animation: ${SidewaysAnimation} 2s 1.5s linear forwards;
+  transform: translateX(${props => props.translateX}vh);
 
   @media (min-width: 500px) {
     margin-left: 2em;
@@ -169,8 +157,7 @@ export const Slide3TextRightStyled = styled.div`
   @media (min-width: 1500px) {
     max-width: 600px;
     margin-right: 6em;
-    transform: translateY(100vh);
-    animation: ${UpwardAnimation} 2s 2s linear forwards;
+    transform: translateY(${props => props.translateY}vh);
   }
   @media (min-width: 1800px) {
     margin-right: 10em;
