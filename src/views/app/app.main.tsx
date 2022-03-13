@@ -13,7 +13,7 @@ import { Tokens } from "../../static/Tokens";
 
 // * Constants
 const _BatchMapper: number = 50;
-const _MaxSizer: number = 250;
+const _MaxSizer: number = 151;
 
 const App: React.FC = () => {
   // * Hooks
@@ -31,7 +31,8 @@ const App: React.FC = () => {
 
   const PositionMapper = (p: number): number =>
     p / _BatchMapper - Math.floor(p / _BatchMapper);
-  const ProgressMapper = (p: number) => (p * 100) / _MaxSizer;
+  const ProgressMapper = (p: number) =>
+    (p * 100) / _MaxSizer < 100 ? (p * 100) / _MaxSizer : 100;
 
   // * Builders
   const ViewBuilder = () =>

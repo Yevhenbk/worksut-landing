@@ -4,7 +4,7 @@ import { ProgressBarContainer, ProgressStatus } from "./ProgressBarStyle";
 
 // * Define proptypes
 const ProgressBarProptypes = {
-  progress: PropTypes.oneOf([...new Array(101)].map((_, i) => i)),
+  progress: PropTypes.number.isRequired,
   bgColor: PropTypes.string,
   height: PropTypes.number,
   dur: PropTypes.string,
