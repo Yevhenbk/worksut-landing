@@ -55,8 +55,8 @@ const App: React.FC = () => {
         return <Slide4 by={PositionMapper(position)} />;
       case position > _BatchMapper * 3 && position <= _BatchMapper * 4:
         return <Slide5 by={PositionMapper(position)} />;
-      case position > _BatchMapper * 5:
-        return <Slide6 by={PositionMapper(position)} />;
+      // case position > _BatchMapper * 5:
+      //   return <Slide6 by={PositionMapper(position)} />;
       default:
         return <h1>SLIDE FALTA</h1>;
     }
