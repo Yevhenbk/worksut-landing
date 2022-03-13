@@ -6,9 +6,14 @@ import Slide2 from "../Slides/Slide2/Slide2";
 import Slide3 from "../Slides/Slide3/Slide3";
 import Slide4 from "../Slides/Slide4/Slide4";
 import { useAppSelector, useAppDispatch } from "../../core/core.app.hooks";
+import Slide5 from "../Slides/Slide5/Slide5";
+import Slide6 from "../Slides/Slide6/Slide6";
+import ProgressBar from "../../components/ProgressBar/ProgressBar";
+import { Tokens } from "../../static/Tokens";
 
 // * Constants
-const _BatchMapper = 50;
+const _BatchMapper: number = 50;
+const _MaxSizer: number = 250;
 
 const App: React.FC = () => {
   // * Hooks
@@ -24,31 +29,37 @@ const App: React.FC = () => {
     dispatch(ev.deltaY > 0 ? Next() : Back());
   };
 
-  const PossitionMapper = (p: number): number =>
+  const PositionMapper = (p: number): number =>
     p / _BatchMapper - Math.floor(p / _BatchMapper);
+  const ProgressMapper = (p: number) => (p * 100) / _MaxSizer;
 
   // * Builders
   const ViewBuilder = () =>
     !loaded ? (
-      <Slide1
-        end={() => {
-          console.log("Se cargo, hora de cambiar");
-          setLoaded(true);
-        }}
-      />
+      <Slide1 end={() => setLoaded(true)} />
     ) : (
-      BuilderSlide()
+      <>
+        <ProgressBar
+          progress={ProgressMapper(position)}
+          bgColor={Tokens.Colors.Button.Default}
+        />
+        {BuilderSlide()}
+      </>
     );
 
-  // TODO: Pending error and remain slides
+  // TODO: Pending error and final on slide 6
   const BuilderSlide = () => {
     switch (true) {
       case position <= _BatchMapper:
-        return <Slide2 by={PossitionMapper(position)} />;
+        return <Slide2 by={PositionMapper(position)} />;
       case position > _BatchMapper && position <= _BatchMapper * 2:
-        return <Slide3 by={PossitionMapper(position)} />;
+        return <Slide3 by={PositionMapper(position)} />;
       case position > _BatchMapper * 2 && position <= _BatchMapper * 3:
-        return <Slide4 by={PossitionMapper(position)} />;
+        return <Slide4 by={PositionMapper(position)} />;
+      case position > _BatchMapper * 3 && position <= _BatchMapper * 4:
+        return <Slide5 by={PositionMapper(position)} />;
+      case position > _BatchMapper * 5:
+        return <Slide6 by={PositionMapper(position)} />;
       default:
         return <h1>SLIDE FALTA</h1>;
     }

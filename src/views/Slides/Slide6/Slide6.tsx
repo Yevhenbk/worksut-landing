@@ -5,13 +5,9 @@ import Text from "../../../components/Text/Text";
 import iconLike from "../../../static/img/iconLike.png";
 import SocialSection from "../../../components/SocialSection/SocialSection";
 import LogoTitle from "../../../components/LogoTitle/LogoTitle";
+import { SlideProptypes, SlidePropTypesTyped } from "../SlidePropTypes";
 
-/**
- * ! Define the landing title component
- * * MgTablante & CarolTraba - 2022/02/10
- * @param props {props}
- */
-const Slide6: React.FC = () => {
+const Slide6: React.FC<SlidePropTypesTyped> = (props) => {
   return (
     <>
       <SlideStyled6>
@@ -58,5 +54,8 @@ const Slide6: React.FC = () => {
     </>
   );
 };
+
+Slide6.propTypes = SlideProptypes;
+
 // * Export component
 export default Slide6;

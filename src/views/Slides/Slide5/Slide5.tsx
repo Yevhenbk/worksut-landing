@@ -6,14 +6,9 @@ import Input from "../../../components/Input/Input";
 import { DivStyled5 } from "./SlideStyled5";
 import SocialSection from "../../../components/SocialSection/SocialSection";
 import LogoTitle from "../../../components/LogoTitle/LogoTitle";
+import { SlideProptypes, SlidePropTypesTyped } from "../SlidePropTypes";
 
-/**
- * ! Define the landing title component
- * * MgTablante & CarolTraba - 2022/02/10
- * @param props {props}
- */
-
-const Slide5: React.FC = () => {
+const Slide5: React.FC<SlidePropTypesTyped> = (props) => {
   // * View Builder
   const [email, setEmail] = useState<string>();
   useEffect(() => {
@@ -75,6 +70,8 @@ const Slide5: React.FC = () => {
     </>
   );
 };
+
+Slide5.propTypes = SlideProptypes;
 
 // * Export component
 export default Slide5;
