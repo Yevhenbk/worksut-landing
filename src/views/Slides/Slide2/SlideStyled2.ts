@@ -1,25 +1,11 @@
 import { Tokens } from "../../../static/Tokens";
-import styled, { keyframes } from "styled-components";
-// * Define keyframes
-const NameAnimation = keyframes`
-0%{
-  transform: translateY(60%);
-  opacity: 0;	 
-}
-20%{
-  opacity: 0;	 
-}
-50%{
-  transform: translateY(0%);
-  opacity: 1;	 
+import styled from "styled-components";
+
+interface Slide2StyledProps {
+  translateY: number;
+  opacity: number;
 }
 
-100%{
-  transform: translateY(0%);
-  opacity: 1;	 
-}
-
-`;
 // * Styled landing title
 export const Slide2Styled = styled.div`
   width: 100%;
@@ -30,9 +16,9 @@ export const Slide2Styled = styled.div`
   background-color: ${Tokens.Colors.Backgrounds.Primary};
 `;
 
-export const Slide2StyledText = styled.div`
-  animation: ${NameAnimation} 1.5s ease-out forwards;
-  transform: translateY(50vh);
+export const Slide2StyledText = styled.div<Slide2StyledProps>`
+  transform: translateY(${(props) => props.translateY});
+  opacity: ${(props) => props.opacity};
   font-size: ${Tokens.Typography.Sizes.Website.Regular};
 
   @media (min-width: 500px) {

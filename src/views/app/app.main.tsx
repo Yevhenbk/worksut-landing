@@ -6,6 +6,7 @@ import Slide2 from "../Slides/Slide2/Slide2";
 import Slide3 from "../Slides/Slide3/Slide3";
 import { useAppSelector, useAppDispatch } from "../../core/core.app.hooks";
 
+// * Constants
 const _BatchMapper = 50;
 
 const App: React.FC = () => {
@@ -24,6 +25,19 @@ const App: React.FC = () => {
 
   const PossitionMapper = (p: number): number => p / _BatchMapper;
 
+  // * Builders
+  const ViewBuilder = () =>
+    !loaded ? (
+      <Slide1
+        end={() => {
+          console.log("Se cargo, hora de cambiar");
+          setLoaded(true);
+        }}
+      />
+    ) : (
+      BuilderSlide()
+    );
+
   const BuilderSlide = () => {
     if (position > 50) {
       return <Slide3 />;
@@ -40,20 +54,7 @@ const App: React.FC = () => {
   };
 
   // * View Builder
-  return (
-    <>
-      {!loaded ? (
-        <Slide1
-          end={() => {
-            console.log("Se cargo, hora de cambiar");
-            setLoaded(true);
-          }}
-        />
-      ) : (
-        BuilderSlide()
-      )}
-    </>
-  );
+  return ViewBuilder();
 };
 
 // * Export the application
