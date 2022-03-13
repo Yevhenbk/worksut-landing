@@ -6,7 +6,7 @@ import HTTPMethod from 'worksut-networking'
 enum APIResourcePaths {
   SUBSCRIBE = '/subscribe'
 }
-const Client = new NetworkClient(process.env.BACKEND_URL!)
+const Client = new NetworkClient('https://localhost:6000')
 interface SubscribeResponse {
   message?: string;
   status: boolean;
