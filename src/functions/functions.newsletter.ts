@@ -41,7 +41,6 @@ export const NewsletterSlice = createSlice({
       state.email = action.payload
     },
     Subscribe: (state) => {
-      console.log(`Subscribe: ${state.email} to newsletter`);
       // * Create body
       const body: object = {email: state.email}; 
       // * Create headers
