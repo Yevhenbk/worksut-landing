@@ -18,6 +18,8 @@ import Slide3 from "../views/Slides/Slide3/Slide3";
 import Slide4 from "../views/Slides/Slide4/Slide4";
 import Slide5 from "../views/Slides/Slide5/Slide5";
 import Slide6 from "../views/Slides/Slide6/Slide6";
+import { Languages } from "../static/Languages";
+import LanguageSelector from "../components/LanguageSelector/LanguageIcon/LanguageIcon";
 
 /**
  * ! Main Instance of the application
@@ -29,11 +31,12 @@ const SampleView = () => {
   const dispatch = useAppDispatch();
   const [email, setEmail] = useState<string>();
   useEffect(() => {
-    console.log(email);
+    //console.log(`${email}`)
   }, [email]);
 
   return (
     <>
+      <LanguageSelector languages={Languages}></LanguageSelector>
       <LogoTitle
         color={Tokens.Colors.Text.Secondary}
         fontWeight={Tokens.Typography.Weights.Bolder}

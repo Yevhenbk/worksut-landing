@@ -13,7 +13,7 @@ type CounterPropsTyped = PropTypes.InferProps<typeof CounterPropstypes>;
 /**
  * ! Counter of loading
  * * PatyVilas - 2022/02/10
- * @param prpos
+ * @param props
  */
 const Counter: React.FC<CounterPropsTyped> = (props: any) => {
   const [count, setCount] = useState(0);
