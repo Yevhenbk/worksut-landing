@@ -71,6 +71,7 @@ const App: React.FC = () => {
           <Slide2
             by={PositionMapper(position)}
             onLanguageChanged={HandleLanguageSelector}
+            language={language}
           />
         );
       case position > _BatchMapper && position <= _BatchMapper * 2:
@@ -79,6 +80,7 @@ const App: React.FC = () => {
           <Slide3
             by={PositionMapper(position)}
             onLanguageChanged={HandleLanguageSelector}
+            language={language}
           />
         );
       case position > _BatchMapper * 2 && position <= _BatchMapper * 3:
@@ -87,6 +89,7 @@ const App: React.FC = () => {
           <Slide4
             by={PositionMapper(position)}
             onLanguageChanged={HandleLanguageSelector}
+            language={language}
           />
         );
       case position > _BatchMapper * 3 && position <= _BatchMapper * 4:
@@ -103,6 +106,7 @@ const App: React.FC = () => {
               dispatch(SetEmail(e));
             }}
             onLanguageChanged={HandleLanguageSelector}
+            language={language}
           />
         );
       // case position > _BatchMapper * 5:

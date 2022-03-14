@@ -13,6 +13,10 @@ const Slide5Proptypes = {
   handleSubmit: PropTypes.func.isRequired,
   handleEmail: PropTypes.func.isRequired,
   onLanguageChanged: PropTypes.func.isRequired,
+  language: PropTypes.shape({
+    iso: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 type Slide5ProptypesTyped = PropTypes.InferProps<typeof Slide5Proptypes>;
