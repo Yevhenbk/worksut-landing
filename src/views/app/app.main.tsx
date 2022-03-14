@@ -38,6 +38,9 @@ const App: React.FC = () => {
     () => logEvent(analytics, `Loaded state changed - ${loaded}`),
     [loaded]
   );
+  useEffect(() => {
+    logEvent(analytics, `Language changed - ${language.title}`);
+  }, [language]);
 
   // * Functionalities
   const HandleScroll = (ev: any) => {
