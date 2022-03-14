@@ -2,6 +2,7 @@ import * as PropTypes from "prop-types";
 
 export const SlideProptypes = {
   by: PropTypes.number.isRequired,
+  onLanguageChanged: PropTypes.func.isRequired
 };
 
 export namespace T {

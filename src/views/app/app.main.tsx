@@ -67,13 +67,28 @@ const App: React.FC = () => {
     switch (true) {
       case position <= _BatchMapper:
         logEvent(analytics, "Second Slide - Start");
-        return <Slide2 by={PositionMapper(position)} />;
+        return (
+          <Slide2
+            by={PositionMapper(position)}
+            onLanguageChanged={HandleLanguageSelector}
+          />
+        );
       case position > _BatchMapper && position <= _BatchMapper * 2:
         logEvent(analytics, "Third Slide - Start");
-        return <Slide3 by={PositionMapper(position)} />;
+        return (
+          <Slide3
+            by={PositionMapper(position)}
+            onLanguageChanged={HandleLanguageSelector}
+          />
+        );
       case position > _BatchMapper * 2 && position <= _BatchMapper * 3:
         logEvent(analytics, "Fourth Slide - Start");
-        return <Slide4 by={PositionMapper(position)} />;
+        return (
+          <Slide4
+            by={PositionMapper(position)}
+            onLanguageChanged={HandleLanguageSelector}
+          />
+        );
       case position > _BatchMapper * 3 && position <= _BatchMapper * 4:
         logEvent(analytics, "Fifth Slide - Start");
         return (
@@ -87,6 +102,7 @@ const App: React.FC = () => {
               logEvent(analytics, `Update email newsletter - ${e}`);
               dispatch(SetEmail(e));
             }}
+            onLanguageChanged={HandleLanguageSelector}
           />
         );
       // case position > _BatchMapper * 5:
