@@ -62,7 +62,6 @@ const App: React.FC = () => {
     );
 
   // TODO: Pending error and final on slide 6
-  // TODO: Inject language to the slider and received language changes thought function using `HandleLanguageSelector`
   const BuilderSlide = () => {
     switch (true) {
       case position <= _BatchMapper:
@@ -92,7 +91,7 @@ const App: React.FC = () => {
             language={language}
           />
         );
-      case position > _BatchMapper * 3 && position <= _BatchMapper * 4:
+      case position > _BatchMapper * 3:
         logEvent(analytics, "Fifth Slide - Start");
         return (
           <Slide5
