@@ -3,8 +3,8 @@ import Text from "../../../components/Text/Text";
 import { Tokens } from "../../../static/Tokens";
 import { SlidePropTypesTyped, SlideProptypes, T } from "../SlidePropTypes";
 
-const _TranslateYInitialValue: number = 60;
-const _BatchConversion: number = 100;
+const _TranslateYInitialValue: number = 10;
+const _BatchConversion: number = 15;
 
 const Slide2: React.FC<SlidePropTypesTyped> = (props) => {
   // * View Builder

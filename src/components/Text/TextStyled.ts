@@ -13,7 +13,7 @@ interface TextStyledProps {
 
 // * Styled landing title
 export const TextStyled = styled.div<TextStyledProps>`
-  max-width: ${(props) => props.width}ch;
+  max-width: ${(props) => props.width}vw;
   color: ${(props) => props.color};
   background-color: ${(props) => props.bgColor};
   font-family: ${(props) => props.fontFamily};

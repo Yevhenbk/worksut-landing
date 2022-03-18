@@ -14,154 +14,121 @@ export const Slide3Styled = styled.div`
   height: 100vh;
   background-color: ${Tokens.Colors.Backgrounds.Secondary};
   color: ${Tokens.Colors.Text.Secondary};
+  font-family: ${Tokens.Typography.FontFamily.Primary};
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  overflow: hidden;
 
   .progress {
     @media (max-width: 1200px) {
       max-width: 50%;
     }
   }
+
   .progressRight {
     @media (max-width: 1200px) {
       width: 50%;
-      position: relative;
-      left: 50%;
+      transform: translateX(100%);
     }
-  }
-  @media (min-width: 1200px) {
-    flex-direction: row;
   }
 `;
 
 // * Style for the left container
 export const Slide3ContentLeftStyled = styled.div`
-  position: relative;
-  top: 5em;
-  @media (min-width: 500px) {
-    top: 3em;
-  }
-  @media (min-width: 700px) {
-    top: 7em;
-  }
-  @media (min-width: 900px) {
-    top: 12em;
-  }
-  @media (min-width: 1200px) {
-    top: 19em;
-    left: -9em;
-  }
-  @media (min-width: 1500px) {
-    top: 16em;
-  }
-  @media (min-width: 1800px) {
-    top: 22em;
-  }
+  height: min-content;
+  margin-bottom: 10vh;
 `;
 
 // * Style for the left text
 export const Slide3TextLeftStyled = styled.div<Slide3AnimationsType>`
-  margin: 0.5em 0 1em 1em;
-  max-width: 300px;
-  opacity: ${props => props.opacity};
-  font-family: ${Tokens.Typography.FontFamily.Primary};
-  font-weight: ${Tokens.Typography.Weights.Bold};
+  margin: 2vh 0vw 0vh 7vw;
+  max-width: 85vw;
+  opacity: ${(props) => props.opacity};
   font-size: ${Tokens.Typography.Sizes.Mobile.Medium};
+  font-weight: ${Tokens.Typography.Weights.SemiBold};
   line-height: ${Tokens.Typography.LineHeight.xxSmall};
-  transform: translateX(${props => props.translateX}vh);
+  transform: translateX(${(props) => props.translateX}vh);
 
   @media (min-width: 500px) {
-    margin-left: 1.5em;
-    max-width: 400px;
     font-size: ${Tokens.Typography.Sizes.Website.xSmall};
     line-height: ${Tokens.Typography.LineHeight.xSmall};
   }
+
   @media (min-width: 700px) {
-    margin-left: 2em;
-    max-width: 600px;
     font-size: ${Tokens.Typography.Sizes.Website.Small};
     line-height: ${Tokens.Typography.LineHeight.Regular};
   }
+
   @media (min-width: 900px) {
-    max-width: 700px;
     line-height: ${Tokens.Typography.LineHeight.Large};
   }
+
   @media (min-width: 1200px) {
-    max-width: 450px;
+    max-width: 35vw;
+    transform: translateY(${(props) => props.translateY}vh);
   }
-  @media (min-width: 1500px) {
-    max-width: 550px;
-    margin-left: 5em;
-    margin-right: -3em;
-    transform: translateY(${props => props.translateY}vh);
-  }
-  @media (min-width: 1800px) {
-    margin-left: 10em;
+
+  @media (min-width: 1700px) {
     font-size: ${Tokens.Typography.Sizes.Website.Small};
   }
+
 `;
 
 // * Style for the right container
 export const Slide3ContentRightStyled = styled.div`
-  position: relative;
-  top: 7em;
-  @media (min-width: 500px) {
-    top: 4em;
-  }
-  @media (min-width: 700px) {
-    top: 9em;
-  }
-  @media (min-width: 900px) {
-    top: 15em;
-  }
-  @media (min-width: 1200px) {
-    top: 17em;
-  }
-  @media (min-width: 1800px) {
-    top: 24em;
-  }
+  height: min-content;
+  margin-left: auto;
+  margin-right: 0;
+  text-align: end;
 `;
 
 // * Style for the right text
 export const Slide3TextRightStyled = styled.div<Slide3AnimationsType>`
-  margin-left: 1em;
-  margin-bottom: 1em;
-  max-width: 300px;
-  opacity: ${props => props.opacity};
-  font-family: ${Tokens.Typography.FontFamily.Primary};
-  font-weight: ${Tokens.Typography.Weights.SemiBold};
+  margin: 2vh 8vw 2vh 0vw;
+  text-align: left;
+  max-width: 85vw;
+  opacity: ${(props) => props.opacity};
+  font-weight: ${Tokens.Typography.Weights.Regular};
   font-size: ${Tokens.Typography.Sizes.Mobile.Small};
   line-height: ${Tokens.Typography.LineHeight.xxxSmall};
-  transform: translateX(${props => props.translateX}vh);
+  transform: translateX(${(props) => props.translateX}vh);
 
   @media (min-width: 500px) {
-    margin-left: 2em;
-    max-width: 400px;
     font-size: ${Tokens.Typography.Sizes.Mobile.Medium};
     line-height: ${Tokens.Typography.LineHeight.xxSmall};
   }
+
   @media (min-width: 700px) {
-    margin-left: 3em;
-    max-width: 600px;
     font-size: ${Tokens.Typography.Sizes.Website.xSmall};
     line-height: ${Tokens.Typography.LineHeight.xSmall};
   }
+
   @media (min-width: 900px) {
-    max-width: 700px;
     line-height: ${Tokens.Typography.LineHeight.Small};
   }
+
   @media (min-width: 1200px) {
-    margin-left: 0em;
-    margin-right: 3em;
-    max-width: 500px;
+    max-width: 35vw;
     line-height: ${Tokens.Typography.LineHeight.Regular};
+    transform: translateY(${(props) => props.translateY}vh);
   }
-  @media (min-width: 1500px) {
-    max-width: 600px;
-    margin-right: 6em;
-    transform: translateY(${props => props.translateY}vh);
-  }
-  @media (min-width: 1800px) {
-    margin-right: 10em;
+
+  .Streesed {
+    & ::after {
+      content: "innovador sistema y una nueva experiencia de usuario nunca antes vista.";
+      color: ${Tokens.Colors.Text.Primary};
+      background: ${Tokens.Colors.Backgrounds.Primary};
+      line-height: ${Tokens.Typography.LineHeight.xxSmall};
+
+      @media (min-width: 500px) {
+        line-height: ${Tokens.Typography.LineHeight.xSmall};
+      }
+
+      @media (min-width: 700px) {
+        line-height: ${Tokens.Typography.LineHeight.Regular};
+      }
+    }
   }
 `;

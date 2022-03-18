@@ -8,6 +8,7 @@ export const DivStyleSocialSection = styled.div`
   position: relative;
   bottom: 3.5em;
   left: 1.5em;
+  width: 20vw;
   @media (min-width: 500px) {
     bottom: 3em;
     left: 1.75em;

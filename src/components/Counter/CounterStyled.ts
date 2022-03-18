@@ -1,3 +1,4 @@
+import { Tokens } from "./../../static/Tokens";
 import styled from "styled-components";
 
 // * Interface definition for counter props
@@ -8,6 +9,7 @@ interface CounterStyledProps {
 // * Styler counter
 export const CounterStyled = styled.h1<CounterStyledProps>`
   color: ${(props) => props.color};
+  font-family: ${Tokens.Typography.FontFamily.Primary};
   font-size: 3em;
   justify-content: center;
   align-items: center;

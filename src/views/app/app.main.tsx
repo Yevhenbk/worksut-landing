@@ -13,11 +13,11 @@ import { analytics } from "../../index";
 import { logEvent } from "firebase/analytics";
 import ProgressBar from "../../components/ProgressBar/ProgressBar";
 import { Languages } from "../../static/Languages";
-import { Language } from "../../components/LanguageSelector/LanguageIcon/LanguageIcon";
+import { Language } from "../../components/LanguageSelector/LanguageSelector";
 
 // * Constants
-const _BatchMapper: number = 50;
-const _MaxSizer: number = 151;
+const _BatchMapper: number = 30;
+const _MaxSizer: number = 91;
 const _DefaultIndexLanguage = 1;
 
 const App: React.FC = () => {
@@ -85,7 +85,7 @@ const App: React.FC = () => {
             language={language}
           />
         );
-      case position > _BatchMapper * 2 && position <= _BatchMapper * 3:
+      case position > _BatchMapper * 2 && position < _BatchMapper * 3:
         logEvent(analytics, "Fourth Slide - Start");
         return (
           <Slide4
@@ -94,7 +94,7 @@ const App: React.FC = () => {
             language={language}
           />
         );
-      case position > _BatchMapper * 3:
+      case position >= _BatchMapper * 3:
         logEvent(analytics, "Fifth Slide - Start");
         return (
           <Slide5
@@ -112,8 +112,14 @@ const App: React.FC = () => {
           />
         );
       // case position > _BatchMapper * 5:
-      //   logEvent(analytics, "Sixth Slide - Start");
-      // return <Slide6 by={PositionMapper(position)} />;
+      //logEvent(analytics, "Sixth Slide - Start");
+      /* return (
+          <Slide6
+            by={PositionMapper(position)}
+            onLanguageChanged={HandleLanguageSelector}
+            language={language}
+          />
+        ); */
       default:
         logEvent(analytics, "Wrong Slide - Error");
         return <h1>SLIDE FALTA</h1>;

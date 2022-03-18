@@ -17,9 +17,10 @@ export const Slide2Styled = styled.div`
 `;
 
 export const Slide2StyledText = styled.div<Slide2StyledProps>`
-  transform: translateY(${(props) => props.translateY});
+  transform: translateY(${(props) => props.translateY}vh);
   opacity: ${(props) => props.opacity};
-  font-size: ${Tokens.Typography.Sizes.Website.Regular};
+  font-size: ${Tokens.Typography.Sizes.Mobile.xxLarge};
+  font-family: ${Tokens.Typography.FontFamily.Primary};
 
   @media (min-width: 500px) {
     font-size: ${Tokens.Typography.Sizes.Website.Medium};
@@ -27,16 +28,7 @@ export const Slide2StyledText = styled.div<Slide2StyledProps>`
   @media (min-width: 700px) {
     font-size: ${Tokens.Typography.Sizes.Website.Large};
   }
-  @media (min-width: 900px) {
-    font-size: ${Tokens.Typography.Sizes.Website.Large};
-  }
-  @media (min-width: 1200px) {
-    font-size: ${Tokens.Typography.Sizes.Website.Large};
-  }
-  @media (min-width: 1500px) {
-    font-size: ${Tokens.Typography.Sizes.Website.xLarge};
-  }
-  @media (min-width: 1800px) {
+  @media (min-width: 1400px) {
     font-size: ${Tokens.Typography.Sizes.Website.xLarge};
   }
 `;

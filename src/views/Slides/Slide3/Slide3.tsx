@@ -13,6 +13,8 @@ import Scrollable from "../../../components/Scrollable/Scrollable";
 import LogoTitle from "../../../components/LogoTitle/LogoTitle";
 import { SlideProptypes, SlidePropTypesTyped, T } from "../SlidePropTypes";
 import ProgressBar from "../../../components/ProgressBar/ProgressBar";
+import LanguageSelector from "../../../components/LanguageSelector/LanguageSelector";
+import { Languages } from "../../../static/Languages";
 
 const _TranslateYInitialValue: number = 100;
 const _TranslateXInitialValue: number = -100;
@@ -23,12 +25,17 @@ const Slide3: React.FC<SlidePropTypesTyped> = (props) => {
   // * View Builder
   return (
     <>
-      <Slide3Styled>
-        <LogoTitle
-          fontWeight={Tokens.Typography.Weights.Bolder}
-          fontFamily={Tokens.Typography.FontFamily.Primary}
+      <LanguageSelector
+        color={Tokens.Colors.Text.Secondary}
+        languages={Languages}
+        selectedIndex={0}
+        onLanguageChanged={props.onLanguageChanged}
+      />
+      <LogoTitle
           text="worksut"
+          color={Tokens.Colors.Text.Secondary}
         />
+      <Slide3Styled>
         <Slide3ContentLeftStyled>
           <div className="progress">
             <ProgressBar progress={100} />
@@ -51,13 +58,11 @@ const Slide3: React.FC<SlidePropTypesTyped> = (props) => {
             <Text
               text="bienvenido a la nueva forma de encontrar trabajo y contratar personas."
               styler={(text) => Styler.UpperCasing(text)}
-              fontFamily={Tokens.Typography.FontFamily.Primary}
             />
             <br />
             <Text
               text="bienvenido al cambio."
               styler={(text) => Styler.UpperCasing(text)}
-              fontFamily={Tokens.Typography.FontFamily.Primary}
             />
           </Slide3TextLeftStyled>
         </Slide3ContentLeftStyled>
@@ -78,17 +83,11 @@ const Slide3: React.FC<SlidePropTypesTyped> = (props) => {
               _Sleeper
             )}
           >
-            <Text text="Nuestra misión es dar a las empresas lo que necesitan y a los trabajadores lo que buscan, impulsando un " />
-            <Text
-              text="innovador sistema y una nueva experiencia de usuario nunca antes vista."
-              color={Tokens.Colors.Text.Primary}
-              bgColor={Tokens.Colors.Backgrounds.Primary}
-            />
+            <div className="Streesed">
+              <Text text="Nuestra misión es dar a las empresas lo que necesitan y a los trabajadores lo que buscan, impulsando un " />
+            </div>
             <br />
-            <Text
-              text="Las plataformas de búsqueda de empleo	actuales están obsoletas, seguro que tú también te habrás dado cuenta. Pero todo ello está a punto de saltar por los aires."
-              fontFamily={Tokens.Typography.FontFamily.Primary}
-            />
+            <Text text="Las plataformas de búsqueda de empleo	actuales están obsoletas, seguro que tú también te habrás dado cuenta. Pero todo ello está a punto de saltar por los aires." />
           </Slide3TextRightStyled>
           <div className="progressRight">
             <ProgressBar progress={100} />

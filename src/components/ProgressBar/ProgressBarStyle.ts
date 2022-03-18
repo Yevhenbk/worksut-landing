@@ -8,6 +8,7 @@ interface ProgressStatusProps {
 
 // * Create styled div
 export const ProgressBarContainer = styled.div`
+  background-color: ${Tokens.Colors.Backgrounds.Secondary};
   width: 100%;
   height: 5px;
 `;

@@ -17,7 +17,7 @@ export const LogoTitleStyled = styled.h3<LogoTitleStyledProps>`
   font-family: ${(props) => props.fontFamily};
   font-weight: ${(props) => props.fontWeight};
   background-color: ${(props) => props.backGround};
-  position: relative;
+  position: absolute;
   margin-top: 2vh;
   margin-left: 1em;
 

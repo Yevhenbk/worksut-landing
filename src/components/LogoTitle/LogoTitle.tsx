@@ -1,5 +1,6 @@
 import * as PropTypes from "prop-types";
 import { LogoTitleStyled } from "./LogoTitleStyled";
+import { Tokens } from '../../static/Tokens';
 
 const LogoTitleProptypes = {
   text: PropTypes.string.isRequired,
@@ -23,7 +24,7 @@ const LogoTitle: React.FC<LogoTitleTyped> = (props: any) => {
         color={props.color}
         fontWeight={props.fontWeight}
         fontSize={props.fontSize}
-        fontFamily={props.fontFamily}
+        fontFamily={Tokens.Typography.FontFamily.Primary}
         backGround={props.backGround}
       >
         {props.styler ? props.styler(props.text) : props.text}

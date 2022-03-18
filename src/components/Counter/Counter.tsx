@@ -18,7 +18,7 @@ type CounterPropsTyped = PropTypes.InferProps<typeof CounterPropstypes>;
  */
 const Counter: React.FC<CounterPropsTyped> = (props: any) => {
   const [count, setCount] = useState(0);
-  const duration = 1;
+  const duration = 2;
   const end = 100;
 
   useEffect(() => {

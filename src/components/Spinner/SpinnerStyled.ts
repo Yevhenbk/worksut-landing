@@ -37,7 +37,7 @@ export const SpinnerStyled = styled.div<SpinnerStyledProps>`
   animation: ${SpinAnimation} 1.75s linear infinite;
 
   @media (min-width: 500px) {
-    border-right: 8px solid ${(props) => props.colorLeft};
+    border-right: 8px solid ${(props) => props.colorRight};
     border-left: ${(props) => props.colorLeft};
     border-top: 8px solid ${(props) => props.colorTop};
     border-bottom: ${(props) => props.colorBottom};
@@ -57,7 +57,7 @@ export const SpinnerStyled = styled.div<SpinnerStyledProps>`
     border-left-color: ${(props) => props.colorLeft};
     border-top: 14px solid ${(props) => props.colorTop};
     border-bottom: ${(props) => props.colorBottom};
-    width: 400px;
-    height: 400px;
+    width: 350px;
+    height: 350px;
   }
 `;

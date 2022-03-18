@@ -8,8 +8,14 @@ export const SlideStyled4 = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-content: center;
   height: 100vh;
   background-color: ${Tokens.Colors.Backgrounds.Primary};
+  font-family: ${Tokens.Typography.FontFamily.Primary};
+  font-weight: ${Tokens.Typography.Weights.Bolder};
+  color: ${Tokens.Colors.Text.Primary};
+  overflow: hidden;
 `;
 
 interface Slide4StyleProptypes {
@@ -18,44 +24,50 @@ interface Slide4StyleProptypes {
 
 // * Styled container for main text
 export const HeroContainer = styled.div<Slide4StyleProptypes>`
-  margin: auto;
+  margin: 0px auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-content: center;
   text-align: center;
-  margin-top: 20vh;
-  max-width: 70vw;
-  transform: scale(${props => props.scale})
-  font-size: 26px;
+  max-width: 75vw;
+  transform: scale(${(props) => props.scale});
+  font-size: ${Tokens.Typography.Sizes.Mobile.xLarge};
 
   @media (min-width: 500px) {
-    font-size: ${Tokens.Typography.Sizes.Website.Regular};
+    font-size: ${Tokens.Typography.Sizes.Mobile.xxLarge};
   }
-
   @media (min-width: 700px) {
     font-size: ${Tokens.Typography.Sizes.Website.Medium};
+  }
+  @media (min-width: 900px) {
+    font-size: 80px;
+  }
+  @media (min-width: 1200px) {
+    font-size: ${Tokens.Typography.Sizes.Website.Large};
   }
 `;
 
 // * Styled Span Container for "New" word
 export const SpanNewContainer = styled.span`
   position: relative;
-  margin-left: 15px;
-  margin-right: 15px;
+  margin: 0 1vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 // * Interface definition for svg props
-interface SvgStyledProps {
-  width: number;
-}
 
 // * Styled SVG for crossline
-export const SvgStyled = styled.svg<SvgStyledProps>`
-  width: ${(props) => props.width}%;
+export const SvgStyled = styled.svg`
+  width: 100%;
   position: absolute;
-  top: -4px;
-  left: -4px;
+  top: 1.5vw;
+  left: 1vw;
+  @media (min-width: 2000px) {
+    top: 1vw;
+  }
 `;
 
 // * Interface definition for crossline props
@@ -75,5 +87,11 @@ export const CrossLineStyled = styled.line<CrossLineStyledProps>`
   }
   @media (min-width: 700px) {
     transform: scale(1);
+  }
+  @media (min-width: 900px) {
+    transform: scale(1.1);
+  }
+  @media (min-width: 1200px) {
+    transform: scale(1.3);
   }
 `;

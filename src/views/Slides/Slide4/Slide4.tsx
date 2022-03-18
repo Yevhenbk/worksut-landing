@@ -10,53 +10,46 @@ import {
   CrossLineStyled,
 } from "./SlideStyled4";
 import { SlideProptypes, SlidePropTypesTyped, T } from "../SlidePropTypes";
+import LanguageSelector from "../../../components/LanguageSelector/LanguageSelector";
+import { Languages } from "../../../static/Languages";
 
-const _MaxScaleWrapper = 8;
+const _MaxScaleWrapper = 7;
 const _MinimumScaleWrapper = 1;
 
 const Slide4: React.FC<SlidePropTypesTyped> = (props) => {
   return (
     <>
+      <LanguageSelector
+        color={Tokens.Colors.Text.Primary}
+        languages={Languages}
+        selectedIndex={0}
+        onLanguageChanged={props.onLanguageChanged}
+      />
+      <LogoTitle text="worksut" color={Tokens.Colors.Text.Primary} />
       <SlideStyled4>
-        <LogoTitle
-          color={Tokens.Colors.Text.Primary}
-          fontWeight={Tokens.Typography.Weights.Bolder}
-          fontFamily={Tokens.Typography.FontFamily.Primary}
-          text="worksut"
-        />
         <HeroContainer
           scale={T.Scale(_MaxScaleWrapper, props.by, _MinimumScaleWrapper)}
         >
-          <Text
-            color={Tokens.Colors.Text.Primary}
-            fontWeight={Tokens.Typography.Weights.Bolder}
-            fontFamily={Tokens.Typography.FontFamily.Primary}
-            text="ÚNETE A LA"
-          />
+          <Text text="ÚNETE A LA" />
           <SpanNewContainer>
-            <Text
-              color={Tokens.Colors.Text.Primary}
-              fontWeight={Tokens.Typography.Weights.Bolder}
-              fontFamily={Tokens.Typography.FontFamily.Primary}
-              text="NUEVA"
-            />
-            <SvgStyled width={255} height={90}>
-              {props.by > 0.1 ? (
+            <Text text="NUEVA" />
+            <SvgStyled>
+              {props.by > 0.5 ? (
                 <>
                   <CrossLineStyled
                     strokeColor={Tokens.Colors.Text.Primary}
                     strokeWidth={12}
-                    x1="5"
-                    y1="10"
-                    x2="250"
-                    y2="80"
+                    x1="0"
+                    y1="5"
+                    x2="240"
+                    y2="70"
                     opacity="0"
                   >
                     <animate
                       attributeName="opacity"
                       from="0"
                       to="1"
-                      begin="0.1"
+                      begin="1.5"
                       dur="0.05s"
                       fill="freeze"
                     />
@@ -64,17 +57,17 @@ const Slide4: React.FC<SlidePropTypesTyped> = (props) => {
                   <CrossLineStyled
                     strokeColor={Tokens.Colors.Text.Primary}
                     strokeWidth={12}
-                    x1="5"
-                    y1="80"
-                    x2="250"
-                    y2="10"
+                    x1="0"
+                    y1="70"
+                    x2="240"
+                    y2="5"
                     opacity="0"
                   >
                     <animate
                       attributeName="opacity"
                       from="0"
                       to="1"
-                      begin="0.15"
+                      begin="2.5"
                       dur="0.1s"
                       fill="freeze"
                     />
@@ -83,19 +76,8 @@ const Slide4: React.FC<SlidePropTypesTyped> = (props) => {
               ) : null}
             </SvgStyled>
           </SpanNewContainer>
-          <Text
-            color={Tokens.Colors.Text.Primary}
-            fontWeight={Tokens.Typography.Weights.Bolder}
-            fontFamily={Tokens.Typography.FontFamily.Primary}
-            text="FORMA"
-          />
-
-          <Text
-            color={Tokens.Colors.Text.Primary}
-            fontWeight={Tokens.Typography.Weights.Bolder}
-            fontFamily={Tokens.Typography.FontFamily.Primary}
-            text="DE ENCONTRAR EMPLEO"
-          />
+          <Text text="FORMA" width={100} />
+          <Text text="DE ENCONTRAR EMPLEO" />
         </HeroContainer>
       </SlideStyled4>
       <SocialSection
